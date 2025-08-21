@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HandyHawaii - Local Home Services</title>
+    <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiSGFuZHlIYXdhaWkiLCJzaG9ydF9uYW1lIjoiSGFuZHlISSIsInN0YXJ0X3VybCI6Ii8iLCJkaXNwbGF5Ijoic3RhbmRhbG9uZSIsImJhY2tncm91bmRfY29sb3IiOiIjZmZmZmZmIiwidGhlbWVfY29sb3IiOiIjMjU2M2ViIn0=">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8fafc;
+            color: #1f2937;
+            overflow-x: hidden;
+            user-select: none;
+        }
+        
+        .app-container {
+            max-width: 414px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: white;
+            padding: 20px 20px 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 100%;
+            height: 200%;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transform: rotate(15deg);
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .header p {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+        
+        /* Login Screen */
+        .login-screen {
+            padding: 40px 20px;
+            text-align: center;
+            min-height: calc(100vh - 120px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .login-icon {
+            font-size: 4rem;
+            margin-bottom: 30px;
+        }
+        
+        .login-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #1f2937;
+        }
+        
+        .login-subtitle {
+            color: #6b7280;
+            margin-bottom: 40px;
+            line-height: 1.5;
+        }
+        
+        .login-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            padding: 16px 20px;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+        
+        .btn-primary:hover, .btn-primary:active {
+            background: #1d4ed8;
+            transform: translateY(-1px);
+        }
+        
+        .btn-secondary {
+            background: #10b981;
+            color: white;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        }
+        
+        .btn-secondary:hover, .btn-secondary:active {
+            background: #059669;
+            transform: translateY(-1px);
+        }
+        
+        .location-info {
+            background: #f0f9ff;
+            border: 1px solid #e0f2fe;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+        
+        .location-info h4 {
+            color: #0369a1;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+        
+        .location-list {
+            display: flex;
+            justify-content: space-around;
+            font-size: 0.8rem;
+            color: #0284c7;
+        }
+        
+        /* Dashboard */
+        .dashboard {
+            display: none;
+            padding: 20px;
+        }
+        
+        .welcome-banner {
+            background: linear-gradient(135deg, #eff6ff, #f0f9ff);
+            border: 1px solid #dbeafe;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .welcome-banner h2 {
+            color: #1e40af;
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+        
+        .welcome-banner p {
+            color: #3730a3;
+            font-size: 0.9rem;
+        }
+        
+        .services-header {
+            margin-bottom: 20px;
+        }
+        
+        .services-header h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .services-header p {
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card:hover, .service-card:active {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-color: #3b82f6;
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .service-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 0.95rem;
+        }
+        
+        .service-price {
+            color: #059669;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+        
+        .service-note {
+            font-size: 0.75rem;
+            color: #6b7280;
+            line-height: 1.3;
+        }
+        
+        .pro-badge {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: #10b981;
+            color: white;
+            font-size: 0.65rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        
+        /* Testimonial */
+        .testimonial {
+            background: linear-gradient(135deg, #f0f9ff, #ecfdf5);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+            border: 1px solid #e0f2fe;
+        }
+        
+        .testimonial-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            color: #374151;
+            margin-bottom: 10px;
+            line-height: 1.4;
+            font-size: 0.9rem;
+        }
+        
+        .testimonial-author {
+            color: #6b7280;
+            font-size: 0.8rem;
+        }
+        
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 414px;
+            background: white;
+            border-top: 1px solid #e5e7eb;
+            padding: 10px 0;
+            display: none;
+        }
+        
+        .nav-items {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border-radius: 8px;
+        }
+        
+        .nav-item:hover, .nav-item:active {
+            background: #f3f4f6;
+        }
+        
+        .nav-icon {
+            font-size: 1.2rem;
+            margin-bottom: 4px;
+        }
+        
+        .nav-label {
+            font-size: 0.7rem;
+            color: #6b7280;
+        }
+        
+        .nav-item.active .nav-label {
+            color: #2563eb;
+        }
+        
+        /* Handyman Dashboard */
+        .handyman-dashboard {
+            display: none;
+            padding: 20px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .stat-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .stat-number.blue {
+            color: #2563eb;
+        }
+        
+        .stat-number.green {
+            color: #059669;
+        }
+        
+        .stat-number.yellow {
+            color: #d97706;
+        }
+        
+        .stat-label {
+            font-size: 0.8rem;
+            color: #6b7280;
+            font-weight: 500;
+        }
+        
+        .requests-section {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 20px;
+        }
+        
+        .requests-header {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .request-card {
+            border: 1px solid #f3f4f6;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .request-header {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .request-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        
+        .request-time {
+            font-size: 0.8rem;
+            color: #6b7280;
+        }
+        
+        .request-description {
+            color: #4b5563;
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        
+        .request-details {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #6b7280;
+            margin-bottom: 12px;
+        }
+        
+        .request-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn-small {
+            padding: 8px 16px;
+            font-size: 0.8rem;
+            border-radius: 6px;
+            flex: 1;
+        }
+        
+        .btn-decline {
+            background: #f3f4f6;
+            color: #374151;
+            border: 1px solid #d1d5db;
+        }
+        
+        .btn-accept {
+            background: #059669;
+            color: white;
+        }
+        
+        /* Hidden class */
+        .hidden {
+            display: none !important;
+        }
+        
+        /* Animations */
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-in {
+            animation: slideUp 0.3s ease-out;
+        }
+        
+        /* Responsive */
+        @media (max-width: 414px) {
+            .app-container {
+                max-width: 100%;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-content">
+                <h1>🏝️ HandyHawaii</h1>
+                <p>Your local ohana for home repairs</p>
+            </div>
+        </div>
+
+        <!-- Login Screen -->
+        <div id="loginScreen" class="login-screen">
+            <div class="login-icon">🤙</div>
+            <h2 class="login-title">Welcome to HandyHawaii</h2>
+            <p class="login-subtitle">Connect with trusted local professionals who understand island living</p>
+            
+            <div class="login-buttons">
+                <button class="btn btn-primary" onclick="loginAsCustomer()">
+                    👤 I need help with my home
+                </button>
+                <button class="btn btn-secondary" onclick="loginAsHandyman()">
+                    🔧 I'm a local tradesperson
+                </button>
+            </div>
+            
+            <div class="location-info">
+                <h4>🌺 Proudly serving O'ahu</h4>
+                <div class="location-list">
+                    <span>🏖️ Honolulu</span>
+                    <span>🏔️ Kailua</span>
+                    <span>🌊 Pearl City</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Customer Dashboard -->
+        <div id="customerDashboard" class="dashboard">
+            <div class="welcome-banner">
+                <h2>Aloha! How can we help?</h2>
+                <p>Choose a service to connect with local experts</p>
+            </div>
+            
+            <div class="services-header">
+                <h3>Professional Services</h3>
+                <p>Trusted locals who understand island challenges</p>
+            </div>
+            
+            <div class="services-grid" id="servicesGrid">
+                <!-- Services loaded by JavaScript -->
+            </div>
+            
+            <div class="testimonial">
+                <div class="testimonial-icon">🌺</div>
+                <p class="testimonial-text">"Finally found handymen who understand our old Kailua home! Fixed our saltwater pipe issues that mainland contractors couldn't figure out."</p>
+                <p class="testimonial-author">— Melissa T., Kailua Homeowner</p>
+            </div>
+        </div>
+
+        <!-- Handyman Dashboard -->
+        <div id="handymanDashboard" class="handyman-dashboard">
+            <div class="welcome-banner">
+                <h2>Welcome back, Keoni! 🤙</h2>
+                <p>You have 3 new job requests</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number blue">3</div>
+                    <div class="stat-label">Today's Jobs</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number green">$1,240</div>
+                    <div class="stat-label">This Week</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number yellow">4.9⭐</div>
+                    <div class="stat-label">Rating</div>
+                </div>
+            </div>
+            
+            <div class="requests-section">
+                <h3 class="requests-header">New Job Requests</h3>
+                
+                <div class="request-card">
+                    <div class="request-header">
+                        <span class="request-title">🔧 Plumbing - Leak Repair</span>
+                        <span class="request-time">2h ago</span>
+                    </div>
+                    <p class="request-description">Kitchen sink has been leaking under the cabinet. Needs immediate attention.</p>
+                    <div class="request-details">
+                        <span>📍 Kailua, HI</span>
+                        <span>⏰ ASAP</span>
+                        <span>💰 $75/hr</span>
+                    </div>
+                    <div class="request-actions">
+                        <button class="btn btn-small btn-decline">Decline</button>
+                        <button class="btn btn-small btn-accept">Accept Job</button>
+                    </div>
+                </div>
+                
+                <div class="request-card">
+                    <div class="request-header">
+                        <span class="request-title">⚡ Electrical - Outlet Installation</span>
+                        <span class="request-time">4h ago</span>
+                    </div>
+                    <p class="request-description">Need to install GFCI outlets in bathroom. Hurricane compliant preferred.</p>
+                    <div class="request-details">
+                        <span>📍 Pearl City, HI</span>
+                        <span>⏰ This week</span>
+                        <span>💰 $85/hr</span>
+                    </div>
+                    <div class="request-actions">
+                        <button class="btn btn-small btn-decline">Decline</button>
+                        <button class="btn btn-small btn-accept">Accept Job</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div id="bottomNav" class="bottom-nav">
+            <div class="nav-items">
+                <div class="nav-item active">
+                    <div class="nav-icon">🏠</div>
+                    <div class="nav-label">Home</div>
+                </div>
+                <div class="nav-item" onclick="showBookings()">
+                    <div class="nav-icon">📋</div>
+                    <div class="nav-label">Bookings</div>
+                </div>
+                <div class="nav-item" onclick="showMessages()">
+                    <div class="nav-icon">💬</div>
+                    <div class="nav-label">Messages</div>
+                </div>
+                <div class="nav-item" onclick="showProfile()">
+                    <div class="nav-icon">👤</div>
+                    <div class="nav-label">Profile</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const services = [
+            { 
+                id: 1, 
+                name: 'Plumbing', 
+                icon: '🔧', 
+                price: 75, 
+                note: 'Salt water specialists'
+            },
+            { 
+                id: 2, 
+                name: 'Electrical', 
+                icon: '⚡', 
+                price: 85, 
+                note: 'Hurricane rated wiring'
+            },
+            { 
+                id: 3, 
+                name: 'Carpentry', 
+                icon: '🪚', 
+                price: 65, 
+                note: 'Koa wood experts'
+            },
+            { 
+                id: 4, 
+                name: 'Painting', 
+                icon: '🎨', 
+                price: 55, 
+                note: 'UV resistant paints'
+            },
+            { 
+                id: 5, 
+                name: 'Appliances', 
+                icon: '🔨', 
+                price: 70, 
+                note: 'Humidity damage pros'
+            },
+            { 
+                id: 6, 
+                name: 'AC/HVAC', 
+                icon: '❄️', 
+                price: 95, 
+                note: 'Beat island heat'
+            }
+        ];
+
+        function loginAsCustomer() {
+            document.getElementById('loginScreen').classList.add('hidden');
+            document.getElementById('customerDashboard').classList.remove('hidden');
+            document.getElementById('bottomNav').style.display = 'block';
+            loadServices();
+            document.getElementById('customerDashboard').classList.add('animate-in');
+        }
+
+        function loginAsHandyman() {
+            document.getElementById('loginScreen').classList.add('hidden');
+            document.getElementById('handymanDashboard').classList.remove('hidden');
+            document.getElementById('bottomNav').style.display = 'block';
+            document.getElementById('handymanDashboard').classList.add('animate-in');
+        }
+
+        function loadServices() {
+            const grid = document.getElementById('servicesGrid');
+            grid.innerHTML = services.map(service => `
+                <div class="service-card" onclick="bookService(${service.id})">
+                    <div class="pro-badge">Local Pro</div>
+                    <div class="service-icon">${service.icon}</div>
+                    <div class="service-name">${service.name}</div>
+                    <div class="service-price">$${service.price}/hr</div>
+                    <div class="service-note">${service.note}</div>
+                </div>
+            `).join('');
+        }
+
+        function bookService(serviceId) {
+            const service = services.find(s => s.id === serviceId);
+            if (navigator.vibrate) navigator.vibrate(50);
+            
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+                background: rgba(0,0,0,0.5); z-index: 1000; display: flex;
+                align-items: center; justify-content: center; padding: 20px;
+            `;
+            
+            modal.innerHTML = `
+                <div style="background: white; border-radius: 16px; padding: 30px; max-width: 300px; text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 20px;">${service.icon}</div>
+                    <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Book ${service.name}</h3>
+                    <p style="color: #6b7280; margin-bottom: 20px;">Professional ${service.name.toLowerCase()} service at $${service.price}/hour</p>
+                    <div style="margin-bottom: 20px;">
+                        <p style="font-weight: 600; margin-bottom: 10px;">📞 Call Now: (808) 555-HANDY</p>
+                        <p style="font-size: 0.9rem; color: #6b7280;">Or we'll call you back in 5 minutes!</p>
+                    </div>
+                    <button onclick="this.parentElement.parentElement.remove()" style="width: 100%; padding: 12px; background: #2563eb; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">
+                        Got it! 🤙
+                    </button>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) modal.remove();
+            });
+        }
+
+        function showBookings() {
+            alert('📋 Your bookings will appear here!\n\nCall (808) 555-HANDY to check status.');
+        }
+
+        function showMessages() {
+            alert('💬 Messages from your handymen will appear here!');
+        }
+
+        function showProfile() {
+            alert('👤 Profile settings coming soon!\n\nCall (808) 555-HANDY for account help.');
+        }
+
+        // Add install prompt for PWA
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            deferredPrompt = e;
+            // Show install button
+        });
+
+        // Add touch feedback
+        document.addEventListener('touchstart', function() {}, {passive: true});
+    </script>
+</body>
+</html>
