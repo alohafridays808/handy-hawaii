@@ -412,7 +412,7 @@
         
         .request-header {
             display: flex;
-            justify-content: between;
+            justify-content: space-between;
             align-items: center;
             margin-bottom: 8px;
         }
@@ -723,17 +723,54 @@
             `;
             
             modal.innerHTML = `
-                <div style="background: white; border-radius: 16px; padding: 30px; max-width: 300px; text-align: center;">
-                    <div style="font-size: 3rem; margin-bottom: 20px;">${service.icon}</div>
-                    <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Book ${service.name}</h3>
-                    <p style="color: #6b7280; margin-bottom: 20px;">Professional ${service.name.toLowerCase()} service at $${service.price}/hour</p>
-                    <div style="margin-bottom: 20px;">
-                        <p style="font-weight: 600; margin-bottom: 10px;">📞 Call Now: (808) 555-HANDY</p>
-                        <p style="font-size: 0.9rem; color: #6b7280;">Or we'll call you back in 5 minutes!</p>
+                <div style="background: white; border-radius: 16px; padding: 25px; max-width: 350px; width: 100%;">
+                    <div style="text-align: center; margin-bottom: 20px;">
+                        <div style="font-size: 3rem; margin-bottom: 10px;">${service.icon}</div>
+                        <h3 style="font-size: 1.3rem; margin-bottom: 5px;">Book ${service.name}</h3>
+                        <p style="color: #6b7280; font-size: 0.9rem;">${service.price}/hour • Local professionals</p>
                     </div>
-                    <button onclick="this.parentElement.parentElement.remove()" style="width: 100%; padding: 12px; background: #2563eb; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">
-                        Got it! 🤙
-                    </button>
+                    
+                    <form id="bookingForm" onsubmit="submitBooking(event, ${service.id})">
+                        <div style="margin-bottom: 15px;">
+                            <label style="display: block; font-weight: 500; margin-bottom: 5px; font-size: 0.9rem;">Your Name</label>
+                            <input type="text" name="name" required style="width: 100%; padding: 10px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 0.9rem;" placeholder="Full name">
+                        </div>
+                        
+                        <div style="margin-bottom: 15px;">
+                            <label style="display: block; font-weight: 500; margin-bottom: 5px; font-size: 0.9rem;">Phone Number</label>
+                            <input type="tel" name="phone" required style="width: 100%; padding: 10px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 0.9rem;" placeholder="(808) 123-4567">
+                        </div>
+                        
+                        <div style="margin-bottom: 15px;">
+                            <label style="display: block; font-weight: 500; margin-bottom: 5px; font-size: 0.9rem;">Address in Hawaii</label>
+                            <input type="text" name="address" required style="width: 100%; padding: 10px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 0.9rem;" placeholder="Street address, city">
+                        </div>
+                        
+                        <div style="margin-bottom: 15px;">
+                            <label style="display: block; font-weight: 500; margin-bottom: 5px; font-size: 0.9rem;">Describe the job</label>
+                            <textarea name="description" required style="width: 100%; padding: 10px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 0.9rem; height: 60px; resize: vertical;" placeholder="What needs to be done?"></textarea>
+                        </div>
+                        
+                        <div style="margin-bottom: 15px;">
+                            <label style="display: block; font-weight: 500; margin-bottom: 5px; font-size: 0.9rem;">When do you need this done?</label>
+                            <select name="urgency" style="width: 100%; padding: 10px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 0.9rem;">
+                                <option value="asap">ASAP (Emergency)</option>
+                                <option value="today">Today</option>
+                                <option value="this-week" selected>This week</option>
+                                <option value="next-week">Next week</option>
+                                <option value="flexible">I'm flexible</option>
+                            </select>
+                        </div>
+                        
+                        <div style="display: flex; gap: 10px; margin-top: 20px;">
+                            <button type="button" onclick="this.closest('div').parentElement.parentElement.remove()" style="flex: 1; padding: 12px; background: #f3f4f6; color: #374151; border: none; border-radius: 8px; font-weight: 500; cursor: pointer;">
+                                Cancel
+                            </button>
+                            <button type="submit" style="flex: 2; padding: 12px; background: #10b981; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">
+                                Request Service 🤙
+                            </button>
+                        </div>
+                    </form>
                 </div>
             `;
             
@@ -741,6 +778,77 @@
             modal.addEventListener('click', (e) => {
                 if (e.target === modal) modal.remove();
             });
+        }
+
+        function submitBooking(event, serviceId) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            const service = services.find(s => s.id === serviceId);
+            
+            const bookingData = {
+                service: service.name,
+                servicePrice: service.price,
+                name: formData.get('name'),
+                phone: formData.get('phone'),
+                address: formData.get('address'),
+                description: formData.get('description'),
+                urgency: formData.get('urgency'),
+                timestamp: new Date().toLocaleString()
+            };
+            
+            // Send email with booking info
+            sendBookingEmail(bookingData);
+            
+            // Show confirmation
+            form.closest('div').parentElement.innerHTML = `
+                <div style="background: white; border-radius: 16px; padding: 30px; max-width: 300px; text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 20px;">✅</div>
+                    <h3 style="font-size: 1.3rem; margin-bottom: 10px; color: #059669;">Booking Submitted!</h3>
+                    <p style="color: #6b7280; margin-bottom: 15px; line-height: 1.4;">Thanks ${bookingData.name}! We'll call you at ${bookingData.phone} within 2 hours to connect you with a local ${service.name.toLowerCase()} professional.</p>
+                    <p style="font-size: 0.9rem; color: #059669; font-weight: 500; margin-bottom: 20px;">Expected rate: ${service.price}/hour</p>
+                    <button onclick="this.parentElement.parentElement.remove()" style="width: 100%; padding: 12px; background: #2563eb; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">
+                        Perfect! 🏝️
+                    </button>
+                </div>
+            `;
+        }
+
+        function sendBookingEmail(bookingData) {
+            // Create email content
+            const subject = `🏝️ New HandyHawaii Booking: ${bookingData.service}`;
+            const body = `
+NEW BOOKING REQUEST:
+
+🛠️ Service: ${bookingData.service} (${bookingData.servicePrice}/hr)
+👤 Customer: ${bookingData.name}
+📞 Phone: ${bookingData.phone}
+📍 Address: ${bookingData.address}
+⏰ Urgency: ${bookingData.urgency}
+📝 Description: ${bookingData.description}
+🕐 Submitted: ${bookingData.timestamp}
+
+---
+Contact customer ASAP to arrange service!
+            `.trim();
+            
+            // Try to send via mailto (will open email app)
+            const mailtoLink = `mailto:aloha@handyhawaii.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Also try to send to you directly
+            const yourEmail = `mailto:alohafridays808@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Open both email links
+            setTimeout(() => window.open(mailtoLink, '_blank'), 100);
+            setTimeout(() => window.open(yourEmail, '_blank'), 500);
+            
+            // Also log to console so you can see the data
+            console.log('New Booking:', bookingData);
+            
+            // Store in localStorage as backup
+            const existingBookings = JSON.parse(localStorage.getItem('handyhawaii_bookings') || '[]');
+            existingBookings.push(bookingData);
+            localStorage.setItem('handyhawaii_bookings', JSON.stringify(existingBookings));
         }
 
         function showBookings() {
