@@ -10,21 +10,18 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: #fafafa;
             color: #1f2937;
             line-height: 1.6;
         }
-        
         .app {
             max-width: 400px;
             margin: 0 auto;
             background: white;
             min-height: 100vh;
         }
-        
         .header {
             background: linear-gradient(135deg, #0369a1, #059669);
             padding: 40px 24px;
@@ -32,7 +29,6 @@
             color: white;
             position: relative;
         }
-        
         .gps-indicator {
             position: absolute;
             top: 10px;
@@ -45,7 +41,6 @@
             align-items: center;
             gap: 5px;
         }
-        
         .gps-dot {
             width: 8px;
             height: 8px;
@@ -53,19 +48,16 @@
             border-radius: 50%;
             animation: pulse 2s infinite;
         }
-        
         @keyframes pulse {
             0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
             70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
             100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
         }
-        
         .logo-mascot {
             margin-bottom: 12px;
             display: flex;
             justify-content: center;
         }
-        
         .mascot-placeholder {
             width: 80px;
             height: 80px;
@@ -79,51 +71,40 @@
             font-size: 2rem;
             transition: transform 0.3s ease;
         }
-        
         .mascot-placeholder:hover {
             transform: scale(1.05) rotate(5deg);
         }
-        
         .logo-text {
             font-size: 1.8rem;
             font-weight: 600;
             margin-bottom: 8px;
         }
-        
         .subtitle {
             font-size: 0.95rem;
             opacity: 0.9;
         }
-        
         .content {
             padding: 32px 24px;
             text-align: center;
             animation: fadeIn 0.5s ease-in;
         }
-        
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        
         .section {
             margin-bottom: 40px;
             transition: opacity 0.3s ease;
         }
-        
         .section.hidden {
-            opacity: 0;
-            height: 0;
-            overflow: hidden;
+            display: none;
         }
-        
         .buttons {
             display: flex;
             flex-direction: column;
             gap: 12px;
             margin-bottom: 40px;
         }
-        
         .btn {
             display: flex;
             align-items: center;
@@ -137,34 +118,28 @@
             cursor: pointer;
             transition: all 0.2s ease;
         }
-        
         .btn-primary {
             background: #0369a1;
             color: white;
         }
-        
         .btn-primary:hover {
             background: #1e40af;
             transform: translateY(-1px);
         }
-        
         .btn-secondary {
             background: #059669;
             color: white;
         }
-        
         .btn-secondary:hover {
             background: #047857;
             transform: translateY(-1px);
         }
-        
         .services-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 12px;
             margin-bottom: 40px;
         }
-        
         .service-card {
             background: white;
             border: 1px solid #f3f4f6;
@@ -174,32 +149,27 @@
             cursor: pointer;
             transition: all 0.2s ease;
         }
-        
         .service-card:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
             border-color: #0369a1;
         }
-        
         .service-icon {
             font-size: 2.2rem;
             margin-bottom: 8px;
             display: block;
         }
-        
         .service-name {
             font-size: 0.95rem;
             font-weight: 500;
             margin-bottom: 4px;
         }
-        
         .service-price {
             font-size: 1rem;
             font-weight: 600;
             color: #059669;
             margin-bottom: 6px;
         }
-        
         .service-tag {
             font-size: 0.7rem;
             color: #6b7280;
@@ -208,7 +178,6 @@
             border-radius: 4px;
             display: inline-block;
         }
-        
         .local-focus {
             background: linear-gradient(135deg, #f8fafc, #f0f9ff);
             border: 1px solid #e0f2fe;
@@ -217,7 +186,6 @@
             text-align: center;
             margin-bottom: 40px;
         }
-        
         .local-focus h3 {
             font-size: 1.1rem;
             font-weight: 600;
@@ -228,36 +196,30 @@
             justify-content: center;
             gap: 8px;
         }
-        
         .local-focus p {
             color: #1f2937;
             font-size: 0.9rem;
             line-height: 1.5;
             margin-bottom: 20px;
         }
-        
         .local-stats {
             display: flex;
             justify-content: space-around;
         }
-        
         .stat {
             text-align: center;
         }
-        
         .stat-number {
             font-size: 1.4rem;
             font-weight: 600;
             color: #0369a1;
         }
-        
         .stat-label {
             font-size: 0.7rem;
             color: #6b7280;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-        
         .testimonial {
             background: white;
             border: 1px solid #f3f4f6;
@@ -266,12 +228,10 @@
             margin-bottom: 40px;
             text-align: center;
         }
-        
         .testimonial-icon {
             font-size: 1.8rem;
             margin-bottom: 16px;
         }
-        
         .testimonial-text {
             font-style: italic;
             color: #1f2937;
@@ -279,13 +239,11 @@
             line-height: 1.5;
             font-size: 0.9rem;
         }
-        
         .testimonial-author {
             font-size: 0.8rem;
             color: #6b7280;
             font-weight: 500;
         }
-        
         .modal {
             position: fixed;
             top: 0;
@@ -302,12 +260,10 @@
             visibility: hidden;
             transition: all 0.3s ease;
         }
-        
         .modal.active {
             opacity: 1;
             visibility: visible;
         }
-        
         .modal-content {
             background: white;
             border-radius: 12px;
@@ -319,7 +275,6 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             position: relative;
         }
-        
         .close-btn {
             position: absolute;
             top: 10px;
@@ -328,40 +283,33 @@
             cursor: pointer;
             color: #6b7280;
         }
-        
         .modal-header {
             text-align: center;
             margin-bottom: 20px;
         }
-        
         .modal-icon {
             font-size: 3rem;
             margin-bottom: 12px;
         }
-        
         .modal-title {
             font-size: 1.3rem;
             font-weight: 600;
             margin-bottom: 8px;
             color: #1f2937;
         }
-        
         .modal-subtitle {
             color: #6b7280;
             font-size: 0.9rem;
         }
-        
         .modal-body {
             text-align: left;
             margin-bottom: 20px;
         }
-        
         .modal-actions {
             display: flex;
             gap: 12px;
             justify-content: center;
         }
-        
         .btn-modal {
             padding: 12px 24px;
             border: none;
@@ -371,29 +319,20 @@
             cursor: pointer;
             transition: all 0.2s ease;
         }
-        
         .btn-modal-primary {
             background: #0369a1;
             color: white;
         }
-        
         .btn-modal-primary:hover {
             background: #1e40af;
         }
-        
         .btn-modal-secondary {
             background: #f3f4f6;
             color: #374151;
         }
-        
         .btn-modal-secondary:hover {
             background: #e5e7eb;
         }
-        
-        .hidden {
-            display: none;
-        }
-        
         .tabs {
             display: flex;
             background: #f3f4f6;
@@ -401,7 +340,6 @@
             padding: 4px;
             margin-bottom: 20px;
         }
-        
         .tab {
             flex: 1;
             padding: 8px 12px;
@@ -413,18 +351,15 @@
             transition: all 0.2s;
             color: #6b7280;
         }
-        
         .tab.active {
             background: white;
             color: #0369a1;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
-        
         .form-group {
             margin-bottom: 16px;
             text-align: left;
         }
-        
         .form-label {
             display: block;
             font-weight: 500;
@@ -432,7 +367,6 @@
             color: #1f2937;
             font-size: 0.9rem;
         }
-        
         .form-input {
             width: 100%;
             padding: 12px 14px;
@@ -442,21 +376,17 @@
             transition: border-color 0.2s ease;
             background: white;
         }
-        
         .form-input:focus {
             outline: none;
             border-color: #0369a1;
         }
-        
         .form-input:invalid[required]:focus {
             border-color: #ef4444;
         }
-        
         .form-textarea {
             resize: vertical;
             min-height: 80px;
         }
-        
         .profile-card {
             background: white;
             border: 1px solid #e5e7eb;
@@ -466,51 +396,42 @@
             cursor: pointer;
             transition: all 0.2s ease;
         }
-        
         .profile-card:hover {
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
             transform: translateY(-2px);
         }
-        
         .profile-header {
             display: flex;
             align-items: center;
             gap: 16px;
             margin-bottom: 16px;
         }
-        
         .profile-avatar {
             font-size: 2.5rem;
         }
-        
         .profile-info {
             flex: 1;
         }
-        
         .profile-name {
             font-weight: 600;
             font-size: 1.1rem;
             color: #1f2937;
         }
-        
         .profile-rating {
             display: flex;
             align-items: center;
             gap: 8px;
             margin-top: 4px;
         }
-        
         .stars {
             color: #fbbf24;
         }
-        
         .profile-details {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 12px;
             margin-bottom: 12px;
         }
-        
         .profile-detail {
             display: flex;
             align-items: center;
@@ -518,14 +439,12 @@
             font-size: 0.85rem;
             color: #6b7280;
         }
-        
         .profile-specialties {
             display: flex;
             flex-wrap: wrap;
             gap: 6px;
             margin-top: 12px;
         }
-        
         .specialty-tag {
             background: #ecfdf5;
             color: #059669;
@@ -534,7 +453,6 @@
             font-size: 0.75rem;
             font-weight: 500;
         }
-        
         .tracking-map {
             background: linear-gradient(135deg, #e0f2fe, #ecfdf5);
             border-radius: 8px;
@@ -542,7 +460,6 @@
             margin: 20px 0;
             text-align: center;
         }
-        
         .tracking-status {
             display: flex;
             align-items: center;
@@ -550,7 +467,6 @@
             gap: 10px;
             margin-bottom: 12px;
         }
-        
         .status-dot {
             width: 10px;
             height: 10px;
@@ -558,14 +474,12 @@
             border-radius: 50%;
             animation: pulse 2s infinite;
         }
-        
         .eta-display {
             background: white;
             padding: 12px;
             border-radius: 6px;
             margin-top: 12px;
         }
-        
         .success-message {
             background: #ecfdf5;
             border: 1px solid #10b981;
@@ -575,7 +489,6 @@
             text-align: center;
             margin: 16px 0;
         }
-        
         .error-message {
             background: #fee2e2;
             border: 1px solid #ef4444;
@@ -585,7 +498,6 @@
             text-align: center;
             margin: 16px 0;
         }
-        
         .chat-container {
             background: #f3f4f6;
             border-radius: 8px;
@@ -595,36 +507,30 @@
             display: flex;
             flex-direction: column;
         }
-        
         .chat-messages {
             flex: 1;
             overflow-y: auto;
             margin-bottom: 12px;
         }
-        
         .chat-message {
             background: white;
             padding: 10px;
             border-radius: 8px;
             margin-bottom: 8px;
         }
-        
         .chat-message.ai {
             background: linear-gradient(135deg, #e0f2fe, #ecfdf5);
         }
-        
         .chat-input-container {
             display: flex;
             gap: 8px;
         }
-        
         .chat-input {
             flex: 1;
             padding: 10px;
             border: 1px solid #e5e7eb;
             border-radius: 6px;
         }
-        
         .chat-send {
             padding: 10px 20px;
             background: #0369a1;
@@ -633,11 +539,9 @@
             border-radius: 6px;
             cursor: pointer;
         }
-        
         .search-container {
             margin-bottom: 20px;
         }
-        
         .search-input {
             width: 100%;
             padding: 12px 14px;
@@ -646,7 +550,6 @@
             font-size: 0.95rem;
             transition: border-color 0.2s ease;
         }
-        
         .search-input:focus {
             outline: none;
             border-color: #0369a1;
@@ -753,20 +656,14 @@
             <div id="servicesSection" class="section hidden">
                 <h2 id="servicesTitle" style="font-size: 1.3rem; font-weight: 600; margin-bottom: 8px; color: #1f2937;">Professional Services</h2>
                 <p id="servicesSubtitle" style="font-size: 0.9rem; color: #6b7280; margin-bottom: 24px;">Choose from our trusted local specialists</p>
-                
                 <div class="search-container">
                     <input type="text" class="search-input" id="serviceSearch" placeholder="Search services..." aria-label="Search for services">
                 </div>
-                
                 <div class="tabs">
                     <div class="tab active" onclick="filterServices('residential')" id="residentialTab" role="tab" aria-selected="true">Residential</div>
                     <div class="tab" onclick="filterServices('commercial')" id="commercialTab" role="tab" aria-selected="false">Commercial</div>
                 </div>
-                
-                <div class="services-grid" id="servicesGrid">
-                    <!-- Services will be loaded here -->
-                </div>
-                
+                <div class="services-grid" id="servicesGrid"></div>
                 <div style="text-align: center; margin-top: 20px;">
                     <button class="btn btn-primary" onclick="showAllServices()" style="width: 100%;" aria-label="View All Services">
                         <span>👁️</span>
@@ -786,7 +683,6 @@
             <div id="handymanSection" class="section hidden">
                 <h2 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 8px; color: #1f2937;">Join Our Ohana</h2>
                 <p style="font-size: 0.9rem; color: #6b7280; margin-bottom: 24px;">Earn $50-150/hour helping your community</p>
-                
                 <div style="background: linear-gradient(135deg, #f8fafc, #f0f9ff); border: 1px solid #e0f2fe; border-radius: 8px; padding: 24px; text-align: center;">
                     <h3 style="color: #0369a1; margin-bottom: 12px; font-size: 1.1rem; font-weight: 600;">🛠️ Now Hiring Local Professionals</h3>
                     <p style="color: #1f2937; margin-bottom: 20px; line-height: 1.5; font-size: 0.9rem;">Licensed contractors, skilled tradespeople, and experienced handymen needed across O'ahu</p>
@@ -801,22 +697,15 @@
             <div id="profilesSection" class="section hidden">
                 <h2 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 8px; color: #1f2937;">Profiles</h2>
                 <p style="font-size: 0.9rem; color: #6b7280; margin-bottom: 24px;">Browse portfolios, reviews, and ratings</p>
-                
                 <div class="tabs" role="tablist">
                     <div id="professionalsTabButton" class="tab active" onclick="switchTab('professionals')" role="tab" aria-selected="true">Professionals</div>
                     <div id="customersTabButton" class="tab" onclick="switchTab('customers')" role="tab" aria-selected="false">Customers</div>
                 </div>
-                
                 <div id="professionalsTab">
-                    <div id="professionalProfiles">
-                        <!-- Professional profiles will be loaded here -->
-                    </div>
+                    <div id="professionalProfiles"></div>
                 </div>
-                
                 <div id="customersTab" class="hidden">
-                    <div id="customerProfiles">
-                        <!-- Customer profiles will be loaded here -->
-                    </div>
+                    <div id="customerProfiles"></div>
                 </div>
             </div>
 
@@ -833,887 +722,889 @@
     <div id="modal" class="modal" onclick="closeModal(event)" role="dialog" aria-modal="true">
         <div class="modal-content" onclick="event.stopPropagation()">
             <span class="close-btn" onclick="closeModal(event)" aria-label="Close modal">&times;</span>
-            <div id="modalBody">
-                <!-- Modal content will be inserted here -->
-            </div>
+            <div id="modalBody"></div>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
-        // Initialize EmailJS
-        (function() {
-            emailjs.init("vweYGEQ4Sy4aDDkxB");
-        })();
+        try {
+            console.log('Script initialized');
 
-        // Data definitions
-        const services = [
-            { id: 1, name: 'Plumbing', icon: '🔧', price: 85, tag: 'Salt-water expert', category: 'residential' },
-            { id: 2, name: 'Electrical', icon: '⚡', price: 95, tag: 'Hurricane certified', category: 'residential' },
-            { id: 3, name: 'Carpentry', icon: '🪚', price: 75, tag: 'Koa specialist', category: 'residential' },
-            { id: 4, name: 'Painting', icon: '🎨', price: 65, tag: 'UV resistant', category: 'residential' },
-            { id: 5, name: 'AC/HVAC', icon: '❄️', price: 120, tag: 'Energy efficient', category: 'residential' },
-            { id: 6, name: 'Landscaping', icon: '🌿', price: 55, tag: 'Native plants', category: 'residential' },
-            { id: 7, name: 'Cleaning', icon: '🧽', price: 45, tag: 'Deep & eco-friendly', category: 'residential' },
-            { id: 8, name: 'Hauling', icon: '🚛', price: 75, tag: 'Island disposal', category: 'residential' },
-            { id: 9, name: 'Off-Grid Build', icon: '🏕️', price: 150, tag: 'Solar & sustainable', category: 'residential' },
-            { id: 10, name: 'ADU Build', icon: '🏠', price: 125, tag: 'Permit experts', category: 'residential' },
-            { id: 11, name: 'Tiny Home Build', icon: '🏘️', price: 135, tag: 'Custom designs', category: 'residential' },
-            { id: 12, name: 'Office Renovation', icon: '🏢', price: 95, tag: 'Business spaces', category: 'commercial' },
-            { id: 13, name: 'Restaurant Setup', icon: '🍽️', price: 110, tag: 'Kitchen certified', category: 'commercial' },
-            { id: 14, name: 'Retail Build-out', icon: '🏪', price: 100, tag: 'Customer-focused', category: 'commercial' },
-            { id: 15, name: 'Warehouse Work', icon: '🏭', price: 85, tag: 'Industrial grade', category: 'commercial' },
-            { id: 16, name: 'Hotel/Resort', icon: '🏨', price: 130, tag: 'Hospitality expert', category: 'commercial' },
-            { id: 17, name: 'Commercial Clean', icon: '🧹', price: 55, tag: 'Business certified', category: 'commercial' },
-            { id: 18, name: 'Signage Install', icon: '🪧', price: 70, tag: 'Permit handled', category: 'commercial' },
-            { id: 19, name: 'Security Systems', icon: '🔒', price: 115, tag: 'Licensed installer', category: 'commercial' }
-        ];
-
-        const professionalProfiles = [
-            {
-                id: 1,
-                name: 'Keoni Martinez',
-                avatar: '👨🏽‍🔧',
-                rating: 4.9,
-                reviewCount: 127,
-                specialties: ['Plumbing', 'Electrical', 'Emergency'],
-                location: 'Honolulu',
-                experience: '8 years',
-                hourlyRate: 85,
-                bio: 'Born and raised in Kalihi. Specializing in saltwater pipe issues and emergency repairs.',
-                serviceTypes: ['Residential', 'Commercial']
-            },
-            {
-                id: 2,
-                name: 'Sarah Kim',
-                avatar: '👩🏻‍🔧',
-                rating: 4.8,
-                reviewCount: 89,
-                specialties: ['Carpentry', 'Painting', 'Lanai Work'],
-                location: 'Pearl City',
-                experience: '5 years',
-                hourlyRate: 75,
-                bio: 'Detail-oriented work on lanais and outdoor spaces. Koa wood specialist.',
-                serviceTypes: ['Residential']
-            },
-            {
-                id: 3,
-                name: 'Makoa Johnson',
-                avatar: '👨🏿‍🔧',
-                rating: 4.7,
-                reviewCount: 156,
-                specialties: ['AC/HVAC', 'Off-Grid', 'Solar'],
-                location: 'Kailua',
-                experience: '12 years',
-                hourlyRate: 120,
-                bio: 'Third generation HVAC tech. Specializes in energy-efficient cooling and off-grid systems.',
-                serviceTypes: ['Residential', 'Commercial']
-            },
-            {
-                id: 4,
-                name: 'Lisa Chen',
-                avatar: '👩🏻‍💼',
-                rating: 4.9,
-                reviewCount: 203,
-                specialties: ['Restaurant', 'Commercial', 'Permits'],
-                location: 'Waikiki',
-                experience: '15 years',
-                hourlyRate: 110,
-                bio: 'Commercial kitchen specialist with health department certification.',
-                serviceTypes: ['Commercial']
-            }
-        ];
-
-        const customerProfiles = [
-            {
-                id: 1,
-                name: 'Jennifer Chen',
-                avatar: '👩🏻‍💼',
-                rating: 4.9,
-                reviewCount: 23,
-                location: 'Honolulu',
-                memberSince: '2023',
-                bio: 'Respectful homeowner who values quality work and timely communication.',
-                projectTypes: ['Bathroom Renovations', 'Kitchen Updates', 'Electrical Work']
-            },
-            {
-                id: 2,
-                name: 'Robert Williams',
-                avatar: '👨🏽‍💻',
-                rating: 3.2,
-                reviewCount: 8,
-                location: 'Kailua',
-                memberSince: '2024',
-                bio: 'New to island living, learning about local construction practices.',
-                projectTypes: ['General Maintenance', 'AC Repair']
-            }
-        ];
-
-        // GPS and Location
-        let userLocation = { lat: 21.4073, lng: -157.7967 }; // Heʻeia, Hawaii
-        
-        function initGPS() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(
-                    (position) => {
-                        userLocation.lat = position.coords.latitude;
-                        userLocation.lng = position.coords.longitude;
-                        updateLocationDisplay();
-                    },
-                    (error) => {
-                        console.log('GPS not available, using default location');
-                        document.getElementById('locationStatus').textContent = 'Heʻeia, HI';
-                    },
-                    {
-                        enableHighAccuracy: false,
-                        timeout: 5000,
-                        maximumAge: 0
-                    }
-                );
-            } else {
-                console.log('Geolocation not supported');
-                document.getElementById('locationStatus').textContent = 'Heʻeia, HI';
-            }
-        }
-
-        function updateLocationDisplay() {
-            const areas = ['Heʻeia', 'Kaneohe', 'Kailua', 'Honolulu', 'Pearl City'];
-            const randomArea = areas[Math.floor(Math.random() * areas.length)];
-            document.getElementById('locationStatus').textContent = `${randomArea}, HI`;
-        }
-
-        // Modal functions
-        const modal = document.getElementById('modal');
-        const modalBody = document.getElementById('modalBody');
-
-        function showModal(content) {
-            modalBody.innerHTML = content;
-            modal.classList.add('active');
-            modal.focus();
-        }
-
-        function closeModal(event) {
-            if (event.target === modal || event.target.classList.contains('close-btn')) {
-                modal.classList.remove('active');
-            }
-        }
-
-        // Navigation functions
-        function showCustomerView(category = 'residential') {
-            document.getElementById('servicesSection').classList.remove('hidden');
-            document.getElementById('handymanSection').classList.add('hidden');
-            document.getElementById('profilesSection').classList.add('hidden');
-            document.getElementById('bookingHistorySection').classList.add('hidden');
-            
-            const title = document.getElementById('servicesTitle');
-            const subtitle = document.getElementById('servicesSubtitle');
-            
-            if (category === 'commercial') {
-                title.textContent = 'Commercial Services';
-                subtitle.textContent = 'Professional services for businesses and commercial properties';
-            } else {
-                title.textContent = 'Residential Services';
-                subtitle.textContent = 'Home services from our trusted local specialists';
-            }
-            
-            document.getElementById('residentialTab').classList.toggle('active', category === 'residential');
-            document.getElementById('residentialTab').setAttribute('aria-selected', category === 'residential');
-            document.getElementById('commercialTab').classList.toggle('active', category === 'commercial');
-            document.getElementById('commercialTab').setAttribute('aria-selected', category === 'commercial');
-            
-            loadServices(category);
-            document.getElementById('servicesSection').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function showHandymanView() {
-            document.getElementById('servicesSection').classList.add('hidden');
-            document.getElementById('handymanSection').classList.remove('hidden');
-            document.getElementById('profilesSection').classList.add('hidden');
-            document.getElementById('bookingHistorySection').classList.add('hidden');
-            document.getElementById('handymanSection').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function showProfiles() {
-            document.getElementById('servicesSection').classList.add('hidden');
-            document.getElementById('handymanSection').classList.add('hidden');
-            document.getElementById('profilesSection').classList.remove('hidden');
-            document.getElementById('bookingHistorySection').classList.add('hidden');
-            switchTab('professionals');
-            document.getElementById('profilesSection').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function showBookingHistory() {
-            document.getElementById('servicesSection').classList.add('hidden');
-            document.getElementById('handymanSection').classList.add('hidden');
-            document.getElementById('profilesSection').classList.add('hidden');
-            document.getElementById('bookingHistorySection').classList.remove('hidden');
-            loadBookingHistory();
-            document.getElementById('bookingHistorySection').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // Service filtering and search
-        let currentServiceFilter = 'residential';
-        function filterServices(category) {
-            currentServiceFilter = category;
-            document.querySelectorAll('.tab').forEach(tab => {
-                tab.classList.remove('active');
-                tab.setAttribute('aria-selected', 'false');
-            });
-            document.getElementById(category + 'Tab').classList.add('active');
-            document.getElementById(category + 'Tab').setAttribute('aria-selected', 'true');
-            
-            const title = document.getElementById('servicesTitle');
-            const subtitle = document.getElementById('servicesSubtitle');
-            
-            if (category === 'commercial') {
-                title.textContent = 'Commercial Services';
-                subtitle.textContent = 'Professional services for businesses and commercial properties';
-            } else {
-                title.textContent = 'Residential Services';
-                subtitle.textContent = 'Home services from our trusted local specialists';
-            }
-            
-            loadServices(category);
-        }
-
-        function showAllServices() {
-            currentServiceFilter = 'all';
-            document.getElementById('servicesTitle').textContent = 'All Professional Services';
-            document.getElementById('servicesSubtitle').textContent = 'Complete range of residential and commercial services';
-            document.querySelectorAll('.tab').forEach(tab => {
-                tab.classList.remove('active');
-                tab.setAttribute('aria-selected', 'false');
-            });
-            loadServices('all');
-        }
-
-        function loadServices(category = 'residential', searchQuery = '') {
-            const grid = document.getElementById('servicesGrid');
-            let filteredServices;
-            
-            if (category === 'all') {
-                filteredServices = services;
-            } else {
-                filteredServices = services.filter(service => service.category === category);
-            }
-            
-            if (searchQuery) {
-                searchQuery = searchQuery.toLowerCase();
-                filteredServices = filteredServices.filter(service => 
-                    service.name.toLowerCase().includes(searchQuery) || 
-                    service.tag.toLowerCase().includes(searchQuery)
-                );
-            }
-            
-            grid.innerHTML = filteredServices.length > 0 ? filteredServices.map(service => `
-                <div class="service-card" onclick="bookService(${service.id})" role="button" aria-label="Book ${service.name} service">
-                    <span class="service-icon">${service.icon}</span>
-                    <div class="service-name">${service.name}</div>
-                    <div class="service-price">$${service.price}/hr</div>
-                    <span class="service-tag">${service.tag}</span>
-                </div>
-            `).join('') : '<div style="text-align: center; color: #6b7280; padding: 40px;">No services found</div>';
-        }
-
-        // Search functionality
-        document.addEventListener('input', function(e) {
-            if (e.target.id === 'serviceSearch') {
-                loadServices(currentServiceFilter, e.target.value);
-            }
-        });
-
-        // Profile management
-        function loadProfessionalProfiles() {
-            const container = document.getElementById('professionalProfiles');
-            container.innerHTML = professionalProfiles.map(pro => `
-                <div class="profile-card" onclick="viewProfile(${pro.id})" role="button" aria-label="View ${pro.name}'s profile">
-                    <div class="profile-header">
-                        <div class="profile-avatar">${pro.avatar}</div>
-                        <div class="profile-info">
-                            <div class="profile-name">${pro.name}</div>
-                            <div class="profile-rating">
-                                <span class="stars">${'⭐'.repeat(Math.floor(pro.rating))}</span>
-                                <span>${pro.rating} (${pro.reviewCount} reviews)</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="profile-details">
-                        <div class="profile-detail">📍 ${pro.location}</div>
-                        <div class="profile-detail">💼 ${pro.experience}</div>
-                        <div class="profile-detail">💰 $${pro.hourlyRate}/hr</div>
-                        <div class="profile-detail">🏢 ${pro.serviceTypes.join(', ')}</div>
-                    </div>
-                    <div style="margin: 12px 0; font-size: 0.85rem; color: #6b7280;">${pro.bio}</div>
-                    <div class="profile-specialties">
-                        ${pro.specialties.map(spec => `<span class="specialty-tag">${spec}</span>`).join('')}
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function loadCustomerProfiles() {
-            const container = document.getElementById('customerProfiles');
-            container.innerHTML = customerProfiles.map(customer => `
-                <div class="profile-card" onclick="viewCustomerProfile(${customer.id})" role="button" aria-label="View ${customer.name}'s profile">
-                    <div class="profile-header">
-                        <div class="profile-avatar">${customer.avatar}</div>
-                        <div class="profile-info">
-                            <div class="profile-name">${customer.name}</div>
-                            <div class="profile-rating">
-                                <span class="stars">${'⭐'.repeat(Math.floor(customer.rating))}</span>
-                                <span>${customer.rating} (${customer.reviewCount} reviews)</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="profile-details">
-                        <div class="profile-detail">📍 ${customer.location}</div>
-                        <div class="profile-detail">🕒 Member since ${customer.memberSince}</div>
-                    </div>
-                    <div style="margin: 12px 0; font-size: 0.85rem; color: #6b7280;">${customer.bio}</div>
-                    <div class="profile-specialties">
-                        ${customer.projectTypes.map(type => `<span class="specialty-tag">${type}</span>`).join('')}
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function switchTab(tab) {
-            document.getElementById('professionalsTab').classList.toggle('hidden', tab !== 'professionals');
-            document.getElementById('customersTab').classList.toggle('hidden', tab !== 'customers');
-            document.getElementById('professionalsTabButton').classList.toggle('active', tab === 'professionals');
-            document.getElementById('professionalsTabButton').setAttribute('aria-selected', tab === 'professionals');
-            document.getElementById('customersTabButton').classList.toggle('active', tab === 'customers');
-            document.getElementById('customersTabButton').setAttribute('aria-selected', tab === 'customers');
-            
-            if (tab === 'professionals') {
-                loadProfessionalProfiles();
-            } else {
-                loadCustomerProfiles();
-            }
-        }
-
-        // Booking functions
-        function bookService(serviceId) {
-            const service = services.find(s => s.id === serviceId);
-            showModal(`
-                <div class="modal-header">
-                    <div class="modal-icon">${service.icon}</div>
-                    <h2 class="modal-title">Book ${service.name}</h2>
-                    <p class="modal-subtitle">Starting at $${service.price}/hour</p>
-                </div>
-                <div class="modal-body">
-                    <form id="bookingForm" onsubmit="submitBooking(${serviceId}); return false;">
-                        <div class="form-group">
-                            <label class="form-label" for="customerName">Your Name</label>
-                            <input type="text" class="form-input" id="customerName" required aria-required="true">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="customerPhone">Phone Number</label>
-                            <input type="tel" class="form-input" id="customerPhone" required aria-required="true" pattern="[0-9]{10,}">
-                            <div class="error-message hidden" id="phoneError">Please enter a valid phone number</div>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="serviceAddress">Service Address</label>
-                            <input type="text" class="form-input" id="serviceAddress" required aria-required="true">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="serviceDate">Preferred Date</label>
-                            <input type="date" class="form-input" id="serviceDate" required aria-required="true" min="${new Date().toISOString().split('T')[0]}">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="serviceTime">Preferred Time</label>
-                            <select class="form-input" id="serviceTime" aria-required="true">
-                                <option>Morning (8am-12pm)</option>
-                                <option>Afternoon (12pm-5pm)</option>
-                                <option>Evening (5pm-8pm)</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="workDescription">Describe the work needed</label>
-                            <textarea class="form-input form-textarea" id="workDescription" required aria-required="true"></textarea>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-actions">
-                    <button class="btn-modal btn-modal-primary" onclick="validateAndSubmitBooking(${serviceId})" aria-label="Book Service">Book Now</button>
-                    <button class="btn-modal btn-modal-secondary" onclick="closeModal(event)" aria-label="Cancel Booking">Cancel</button>
-                </div>
-            `);
-        }
-
-        function validateAndSubmitBooking(serviceId) {
-            const form = document.getElementById('bookingForm');
-            const phoneInput = document.getElementById('customerPhone');
-            const phoneError = document.getElementById('phoneError');
-            
-            if (!form.checkValidity()) {
-                form.reportValidity();
-                return;
-            }
-            
-            if (!/^[0-9]{10,}$/.test(phoneInput.value)) {
-                phoneError.classList.remove('hidden');
-                phoneInput.focus();
-                return;
-            } else {
-                phoneError.classList.add('hidden');
-            }
-            
-            submitBooking(serviceId);
-        }
-
-        function submitBooking(serviceId) {
-            const service = services.find(s => s.id === serviceId);
-            const formData = {
-                service: service.name,
-                name: document.getElementById('customerName').value,
-                phone: document.getElementById('customerPhone').value,
-                address: document.getElementById('serviceAddress').value,
-                date: document.getElementById('serviceDate').value,
-                time: document.getElementById('serviceTime').value,
-                description: document.getElementById('workDescription').value
-            };
-
-            const bookings = JSON.parse(localStorage.getItem('bookings') || '[]');
-            const bookingId = Date.now();
-            bookings.push({...formData, id: bookingId, status: 'pending'});
-            localStorage.setItem('bookings', JSON.stringify(bookings));
-
-            const shortMessage = `HandyHawaii: New ${formData.service} booking from ${formData.name}. ${formData.date} ${formData.time}. ID: ${bookingId}`;
-            
-            const templateParams = {
-                name: formData.name,
-                message: `NEW BOOKING RECEIVED:\n\n🔧 Service: ${formData.service}\n👤 Customer: ${formData.name}\n📞 Phone: ${formData.phone}\n📍 Address: ${formData.address}\n📅 Date: ${formData.date}\n⏰ Time: ${formData.time}\n📝 Description: ${formData.description}\n🆔 Booking ID: ${bookingId}\n\nContact customer ASAP to arrange service!`,
-                email: 'alohafridays808@gmail.com',
-                reply_to: formData.phone
-            };
-
-            let emailSent = false;
-            let smsSent = false;
-
-            showModal(`
-                <div class="modal-header">
-                    <div class="modal-icon">⏳</div>
-                    <h2 class="modal-title">Processing Booking...</h2>
-                </div>
-                <div class="modal-body">
-                    <p>Sending your ${service.name} booking request...</p>
-                    <div id="notificationStatus"></div>
-                </div>
-            `);
-
+            // Initialize EmailJS
             if (typeof emailjs !== 'undefined') {
-                emailjs.send('service_5s2cpvn', 'template_qikbrap', templateParams)
-                    .then(response => {
-                        emailSent = true;
-                        showBookingConfirmation(service, formData, bookingId, true, false);
-                    })
-                    .catch(error => {
-                        console.error('EmailJS error:', error);
-                        sendSMS(shortMessage).then(smsResult => {
-                            smsSent = smsResult;
-                            showBookingConfirmation(service, formData, bookingId, false, smsResult);
-                        });
+                emailjs.init("vweYGEQ4Sy4aDDkxB"); // Replace with your EmailJS user_id if needed
+            } else {
+                console.warn('EmailJS not loaded; booking notifications may not send');
+            }
+
+            // Data definitions
+            const services = [
+                { id: 1, name: 'Plumbing', icon: '🔧', price: 85, tag: 'Salt-water expert', category: 'residential' },
+                { id: 2, name: 'Electrical', icon: '⚡', price: 95, tag: 'Hurricane certified', category: 'residential' },
+                { id: 3, name: 'Carpentry', icon: '🪚', price: 75, tag: 'Koa specialist', category: 'residential' },
+                { id: 4, name: 'Painting', icon: '🎨', price: 65, tag: 'UV resistant', category: 'residential' },
+                { id: 5, name: 'AC/HVAC', icon: '❄️', price: 120, tag: 'Energy efficient', category: 'residential' },
+                { id: 6, name: 'Landscaping', icon: '🌿', price: 55, tag: 'Native plants', category: 'residential' },
+                { id: 7, name: 'Cleaning', icon: '🧽', price: 45, tag: 'Deep & eco-friendly', category: 'residential' },
+                { id: 8, name: 'Hauling', icon: '🚛', price: 75, tag: 'Island disposal', category: 'residential' },
+                { id: 9, name: 'Off-Grid Build', icon: '🏕️', price: 150, tag: 'Solar & sustainable', category: 'residential' },
+                { id: 10, name: 'ADU Build', icon: '🏠', price: 125, tag: 'Permit experts', category: 'residential' },
+                { id: 11, name: 'Tiny Home Build', icon: '🏘️', price: 135, tag: 'Custom designs', category: 'residential' },
+                { id: 12, name: 'Office Renovation', icon: '🏢', price: 95, tag: 'Business spaces', category: 'commercial' },
+                { id: 13, name: 'Restaurant Setup', icon: '🍽️', price: 110, tag: 'Kitchen certified', category: 'commercial' },
+                { id: 14, name: 'Retail Build-out', icon: '🏪', price: 100, tag: 'Customer-focused', category: 'commercial' },
+                { id: 15, name: 'Warehouse Work', icon: '🏭', price: 85, tag: 'Industrial grade', category: 'commercial' },
+                { id: 16, name: 'Hotel/Resort', icon: '🏨', price: 130, tag: 'Hospitality expert', category: 'commercial' },
+                { id: 17, name: 'Commercial Clean', icon: '🧹', price: 55, tag: 'Business certified', category: 'commercial' },
+                { id: 18, name: 'Signage Install', icon: '🪧', price: 70, tag: 'Permit handled', category: 'commercial' },
+                { id: 19, name: 'Security Systems', icon: '🔒', price: 115, tag: 'Licensed installer', category: 'commercial' }
+            ];
+
+            const professionalProfiles = [
+                { id: 1, name: 'Keoni Martinez', avatar: '👨🏽‍🔧', rating: 4.9, reviewCount: 127, specialties: ['Plumbing', 'Electrical', 'Emergency'], location: 'Honolulu', experience: '8 years', hourlyRate: 85, bio: 'Born and raised in Kalihi. Specializing in saltwater pipe issues and emergency repairs.', serviceTypes: ['Residential', 'Commercial'] },
+                { id: 2, name: 'Sarah Kim', avatar: '👩🏻‍🔧', rating: 4.8, reviewCount: 89, specialties: ['Carpentry', 'Painting', 'Lanai Work'], location: 'Pearl City', experience: '5 years', hourlyRate: 75, bio: 'Detail-oriented work on lanais and outdoor spaces. Koa wood specialist.', serviceTypes: ['Residential'] },
+                { id: 3, name: 'Makoa Johnson', avatar: '👨🏿‍🔧', rating: 4.7, reviewCount: 156, specialties: ['AC/HVAC', 'Off-Grid', 'Solar'], location: 'Kailua', experience: '12 years', hourlyRate: 120, bio: 'Third generation HVAC tech. Specializes in energy-efficient cooling and off-grid systems.', serviceTypes: ['Residential', 'Commercial'] },
+                { id: 4, name: 'Lisa Chen', avatar: '👩🏻‍💼', rating: 4.9, reviewCount: 203, specialties: ['Restaurant', 'Commercial', 'Permits'], location: 'Waikiki', experience: '15 years', hourlyRate: 110, bio: 'Commercial kitchen specialist with health department certification.', serviceTypes: ['Commercial'] }
+            ];
+
+            const customerProfiles = [
+                { id: 1, name: 'Jennifer Chen', avatar: '👩🏻‍💼', rating: 4.9, reviewCount: 23, location: 'Honolulu', memberSince: '2023', bio: 'Respectful homeowner who values quality work and timely communication.', projectTypes: ['Bathroom Renovations', 'Kitchen Updates', 'Electrical Work'] },
+                { id: 2, name: 'Robert Williams', avatar: '👨🏽‍💻', rating: 3.2, reviewCount: 8, location: 'Kailua', memberSince: '2024', bio: 'New to island living, learning about local construction practices.', projectTypes: ['General Maintenance', 'AC Repair'] }
+            ];
+
+            // GPS and Location
+            let userLocation = { lat: 21.4073, lng: -157.7967 };
+            function initGPS() {
+                try {
+                    if (navigator.geolocation) {
+                        navigator.geolocation.getCurrentPosition(
+                            (position) => {
+                                userLocation.lat = position.coords.latitude;
+                                userLocation.lng = position.coords.longitude;
+                                updateLocationDisplay();
+                            },
+                            (error) => {
+                                console.log('GPS not available, using default location');
+                                document.getElementById('locationStatus').textContent = 'Heʻeia, HI';
+                            },
+                            { enableHighAccuracy: false, timeout: 5000, maximumAge: 0 }
+                        );
+                    } else {
+                        console.log('Geolocation not supported');
+                        document.getElementById('locationStatus').textContent = 'Heʻeia, HI';
+                    }
+                } catch (error) {
+                    console.error('initGPS error:', error);
+                }
+            }
+
+            function updateLocationDisplay() {
+                try {
+                    const areas = ['Heʻeia', 'Kaneohe', 'Kailua', 'Honolulu', 'Pearl City'];
+                    const randomArea = areas[Math.floor(Math.random() * areas.length)];
+                    const locationStatus = document.getElementById('locationStatus');
+                    if (locationStatus) {
+                        locationStatus.textContent = `${randomArea}, HI`;
+                    }
+                } catch (error) {
+                    console.error('updateLocationDisplay error:', error);
+                }
+            }
+
+            // Modal functions
+            const modal = document.getElementById('modal');
+            const modalBody = document.getElementById('modalBody');
+
+            function showModal(content) {
+                try {
+                    if (!modalBody || !modal) {
+                        console.error('Modal elements not found');
+                        return;
+                    }
+                    modalBody.innerHTML = content;
+                    modal.classList.add('active');
+                    modal.focus();
+                } catch (error) {
+                    console.error('showModal error:', error);
+                }
+            }
+
+            function closeModal(event) {
+                try {
+                    if (event.target === modal || event.target.classList.contains('close-btn')) {
+                        modal.classList.remove('active');
+                    }
+                } catch (error) {
+                    console.error('closeModal error:', error);
+                }
+            }
+
+            // Navigation functions
+            function showCustomerView(category = 'residential') {
+                try {
+                    console.log('showCustomerView called with:', category);
+                    const servicesSection = document.getElementById('servicesSection');
+                    const handymanSection = document.getElementById('handymanSection');
+                    const profilesSection = document.getElementById('profilesSection');
+                    const bookingHistorySection = document.getElementById('bookingHistorySection');
+                    const servicesTitle = document.getElementById('servicesTitle');
+                    const servicesSubtitle = document.getElementById('servicesSubtitle');
+                    const residentialTab = document.getElementById('residentialTab');
+                    const commercialTab = document.getElementById('commercialTab');
+
+                    if (!servicesSection || !handymanSection || !profilesSection || !bookingHistorySection ||
+                        !servicesTitle || !servicesSubtitle || !residentialTab || !commercialTab) {
+                        console.error('One or more section elements not found');
+                        return;
+                    }
+
+                    servicesSection.classList.remove('hidden');
+                    handymanSection.classList.add('hidden');
+                    profilesSection.classList.add('hidden');
+                    bookingHistorySection.classList.add('hidden');
+
+                    servicesTitle.textContent = category === 'commercial' ? 'Commercial Services' : 'Residential Services';
+                    servicesSubtitle.textContent = category === 'commercial' ? 'Professional services for businesses and commercial properties' : 'Home services from our trusted local specialists';
+                    residentialTab.classList.toggle('active', category === 'residential');
+                    residentialTab.setAttribute('aria-selected', category === 'residential');
+                    commercialTab.classList.toggle('active', category === 'commercial');
+                    commercialTab.setAttribute('aria-selected', category === 'commercial');
+
+                    loadServices(category);
+                    servicesSection.scrollIntoView({ behavior: 'smooth' });
+                } catch (error) {
+                    console.error('showCustomerView error:', error);
+                }
+            }
+
+            function showHandymanView() {
+                try {
+                    console.log('showHandymanView called');
+                    const servicesSection = document.getElementById('servicesSection');
+                    const handymanSection = document.getElementById('handymanSection');
+                    const profilesSection = document.getElementById('profilesSection');
+                    const bookingHistorySection = document.getElementById('bookingHistorySection');
+
+                    if (!servicesSection || !handymanSection || !profilesSection || !bookingHistorySection) {
+                        console.error('One or more section elements not found');
+                        return;
+                    }
+
+                    servicesSection.classList.add('hidden');
+                    handymanSection.classList.remove('hidden');
+                    profilesSection.classList.add('hidden');
+                    bookingHistorySection.classList.add('hidden');
+                    handymanSection.scrollIntoView({ behavior: 'smooth' });
+                } catch (error) {
+                    console.error('showHandymanView error:', error);
+                }
+            }
+
+            function showBookingHistory() {
+                try {
+                    console.log('showBookingHistory called');
+                    const servicesSection = document.getElementById('servicesSection');
+                    const handymanSection = document.getElementById('handymanSection');
+                    const profilesSection = document.getElementById('profilesSection');
+                    const bookingHistorySection = document.getElementById('bookingHistorySection');
+
+                    if (!servicesSection || !handymanSection || !profilesSection || !bookingHistorySection) {
+                        console.error('One or more section elements not found');
+                        return;
+                    }
+
+                    servicesSection.classList.add('hidden');
+                    handymanSection.classList.add('hidden');
+                    profilesSection.classList.add('hidden');
+                    bookingHistorySection.classList.remove('hidden');
+                    loadBookingHistory();
+                    bookingHistorySection.scrollIntoView({ behavior: 'smooth' });
+                } catch (error) {
+                    console.error('showBookingHistory error:', error);
+                }
+            }
+
+            // AI Chat
+            function showAIInfo() {
+                try {
+                    console.log('showAIInfo called');
+                    showModal(`
+                        <div class="modal-header">
+                            <div class="modal-icon">🤖</div>
+                            <h2 class="modal-title">Kona AI Assistant</h2>
+                            <p class="modal-subtitle">Ask about pricing, scheduling, or project advice</p>
+                        </div>
+                        <div class="modal-body">
+                            <div class="chat-container">
+                                <div class="chat-messages" id="chatMessages">
+                                    <div class="chat-message ai">Aloha! I'm Kona AI. How can I assist you today?</div>
+                                </div>
+                                <div class="chat-input-container">
+                                    <input type="text" class="chat-input" id="chatInput" placeholder="Type your question..." aria-label="Chat input">
+                                    <button class="chat-send" onclick="sendChatMessage()" aria-label="Send message">Send</button>
+                                </div>
+                                <div style="margin-top: 12px; font-size: 0.85rem; color: #6b7280;">
+                                    <strong>Sample Questions:</strong><br>
+                                    - What's the cost of plumbing services?<br>
+                                    - Can I book a carpenter for next week?<br>
+                                    - What are the qualifications of your professionals?
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-actions">
+                            <button class="btn-modal btn-modal-secondary" onclick="closeModal(event)" aria-label="Close">Close</button>
+                        </div>
+                    `);
+                    const chatInput = document.getElementById('chatInput');
+                    if (chatInput) chatInput.focus();
+                } catch (error) {
+                    console.error('showAIInfo error:', error);
+                }
+            }
+
+            function sendChatMessage() {
+                try {
+                    console.log('sendChatMessage called');
+                    const chatInput = document.getElementById('chatInput');
+                    const chatMessages = document.getElementById('chatMessages');
+                    if (!chatInput || !chatMessages) {
+                        console.error('Chat elements not found');
+                        return;
+                    }
+                    const message = chatInput.value.trim();
+                    if (!message) return;
+
+                    chatMessages.innerHTML += `
+                        <div class="chat-message" style="text-align: right; background: #e0f2fe;">${message}</div>
+                    `;
+                    chatInput.value = '';
+
+                    const response = generateAIResponse(message);
+                    setTimeout(() => {
+                        chatMessages.innerHTML += `
+                            <div class="chat-message ai">${response}</div>
+                        `;
+                        chatMessages.scrollTop = chatMessages.scrollHeight;
+                    }, 500);
+                } catch (error) {
+                    console.error('sendChatMessage error:', error);
+                }
+            }
+
+            function generateAIResponse(message) {
+                try {
+                    message = message.toLowerCase();
+                    if (message.includes('cost') || message.includes('price')) {
+                        return 'Service prices start at $45/hr for cleaning and go up to $150/hr for specialized builds. Select a service to see specific rates!';
+                    } else if (message.includes('book') || message.includes('schedule')) {
+                        return 'You can book a service by selecting it from the services list and filling out the booking form. Want me to guide you through it?';
+                    } else if (message.includes('qualifications') || message.includes('professional')) {
+                        return 'Our professionals are local experts with 5-15 years of experience. Check their profiles for ratings and specialties!';
+                    } else {
+                        return 'Aloha! I can help with pricing, scheduling, or finding a professional. Try asking something like "What’s the cost of plumbing?"';
+                    }
+                } catch (error) {
+                    console.error('generateAIResponse error:', error);
+                    return 'Sorry, I encountered an issue. Please try again!';
+                }
+            }
+
+            // Service filtering and search
+            let currentServiceFilter = 'residential';
+            function filterServices(category) {
+                try {
+                    console.log('filterServices called with:', category);
+                    currentServiceFilter = category;
+                    const residentialTab = document.getElementById('residentialTab');
+                    const commercialTab = document.getElementById('commercialTab');
+                    const servicesTitle = document.getElementById('servicesTitle');
+                    const servicesSubtitle = document.getElementById('servicesSubtitle');
+
+                    if (!residentialTab || !commercialTab || !servicesTitle || !servicesSubtitle) {
+                        console.error('Service tab or title elements not found');
+                        return;
+                    }
+
+                    residentialTab.classList.toggle('active', category === 'residential');
+                    residentialTab.setAttribute('aria-selected', category === 'residential');
+                    commercialTab.classList.toggle('active', category === 'commercial');
+                    commercialTab.setAttribute('aria-selected', category === 'commercial');
+
+                    servicesTitle.textContent = category === 'commercial' ? 'Commercial Services' : 'Residential Services';
+                    servicesSubtitle.textContent = category === 'commercial' ? 'Professional services for businesses and commercial properties' : 'Home services from our trusted local specialists';
+                    loadServices(category);
+                } catch (error) {
+                    console.error('filterServices error:', error);
+                }
+            }
+
+            function showAllServices() {
+                try {
+                    console.log('showAllServices called');
+                    currentServiceFilter = 'all';
+                    const servicesTitle = document.getElementById('servicesTitle');
+                    const servicesSubtitle = document.getElementById('servicesSubtitle');
+                    if (!servicesTitle || !servicesSubtitle) {
+                        console.error('Service title elements not found');
+                        return;
+                    }
+                    servicesTitle.textContent = 'All Professional Services';
+                    servicesSubtitle.textContent = 'Complete range of residential and commercial services';
+                    document.querySelectorAll('.tab').forEach(tab => {
+                        tab.classList.remove('active');
+                        tab.setAttribute('aria-selected', 'false');
                     });
-            } else {
-                sendSMS(shortMessage).then(smsResult => {
-                    smsSent = smsResult;
-                    showBookingConfirmation(service, formData, bookingId, false, smsResult);
-                });
+                    loadServices('all');
+                } catch (error) {
+                    console.error('showAllServices error:', error);
+                }
             }
-        }
 
-        function showBookingConfirmation(service, formData, bookingId, emailSuccess, smsSuccess) {
-            showModal(`
-                <div class="modal-header">
-                    <div class="modal-icon">✅</div>
-                    <h2 class="modal-title">Booking Confirmed!</h2>
-                </div>
-                <div class="modal-body">
-                    <div class="${emailSuccess || smsSuccess ? 'success-message' : 'error-message'}">
-                        ${emailSuccess ? '✅ Email sent to alohafridays808@gmail.com' : 
-                        smsSuccess ? '📱 SMS notification sent as backup' : 
-                        '⚠️ Saved locally. Configure notifications in settings.'}
-                    </div>
-                    <div class="tracking-map">
-                        <div class="tracking-status">
-                            <div class="status-dot"></div>
-                            <span>Finding nearest available professional...</span>
+            function loadServices(category = 'residential', searchQuery = '') {
+                try {
+                    console.log('loadServices called with:', category, searchQuery);
+                    const grid = document.getElementById('servicesGrid');
+                    if (!grid) {
+                        console.error('servicesGrid not found');
+                        return;
+                    }
+                    let filteredServices = category === 'all' ? services : services.filter(service => service.category === category);
+                    if (searchQuery) {
+                        searchQuery = searchQuery.toLowerCase();
+                        filteredServices = filteredServices.filter(service => 
+                            service.name.toLowerCase().includes(searchQuery) || 
+                            service.tag.toLowerCase().includes(searchQuery)
+                        );
+                    }
+                    grid.innerHTML = filteredServices.length > 0 ? filteredServices.map(service => `
+                        <div class="service-card" onclick="bookService(${service.id})" role="button" aria-label="Book ${service.name} service">
+                            <span class="service-icon">${service.icon}</span>
+                            <div class="service-name">${service.name}</div>
+                            <div class="service-price">$${service.price}/hr</div>
+                            <span class="service-tag">${service.tag}</span>
                         </div>
-                        <div class="eta-display">
-                            <strong>Estimated arrival:</strong> ${formData.date} - ${formData.time}
-                        </div>
-                    </div>
-                    <p style="margin-top: 16px; font-size: 0.9rem; color: #6b7280;">
-                        You'll receive a confirmation text at ${formData.phone} with your professional's details.
-                    </p>
-                </div>
-                <div class="modal-actions">
-                    <button class="btn-modal btn-modal-primary" onclick="trackBooking(${bookingId})" aria-label="Track Professional">Track Professional</button>
-                    <button class="btn-modal btn-modal-secondary" onclick="closeModal(event)" aria-label="Close">Done</button>
-                </div>
-            `);
-        }
-
-        async function sendSMS(message, recipientPhone = '+18085551234') {
-            try {
-                const response = await fetch('https://textbelt.com/text', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        phone: recipientPhone,
-                        message: message.substring(0, 160),
-                        key: 'textbelt'
-                    })
-                });
-                const data = await response.json();
-                return data.success;
-            } catch (error) {
-                console.error('SMS error:', error);
-                return false;
+                    `).join('') : '<div style="text-align: center; color: #6b7280; padding: 40px;">No services found</div>';
+                } catch (error) {
+                    console.error('loadServices error:', error);
+                }
             }
-        }
 
-        function trackBooking(bookingId) {
-            const bookings = JSON.parse(localStorage.getItem('bookings') || '[]');
-            const booking = bookings.find(b => b.id === bookingId);
-            showModal(`
-                <div class="modal-header">
-                    <div class="modal-icon">📍</div>
-                    <h2 class="modal-title">Live Tracking</h2>
-                </div>
-                <div class="modal-body">
-                    <div class="tracking-map" style="height: 200px; position: relative;">
-                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                            <div class="status-dot" style="width: 20px; height: 20px;"></div>
-                        </div>
-                        <div style="position: absolute; bottom: 10px; left: 10px; background: white; padding: 8px; border-radius: 4px; font-size: 0.8rem;">
-                            Professional: Keoni M.
-                        </div>
-                    </div>
-                    <div class="eta-display">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-                            <span>Status:</span>
-                            <strong style="color: #059669;">On the way</strong>
-                        </div>
-                        <div style="display: flex; justify-content: space-between;">
-                            <span>ETA:</span>
-                            <strong>15 minutes</strong>
-                        </div>
-                    </div>
-                    <div style="margin-top: 16px; padding: 12px; background: #f3f4f6; border-radius: 6px;">
-                        <strong>Keoni Martinez</strong><br>
-                        <span style="color: #6b7280; font-size: 0.85rem;">⭐ 4.9 rating • 127 jobs completed</span>
-                    </div>
-                </div>
-                <div class="modal-actions">
-                    <button class="btn-modal btn-modal-primary" onclick="contactProfessional()" aria-label="Call Professional">Call Professional</button>
-                    <button class="btn-modal btn-modal-secondary" onclick="closeModal(event)" aria-label="Close">Close</button>
-                </div>
-            `);
-        }
+            // Search functionality
+            document.addEventListener('input', function(e) {
+                try {
+                    if (e.target.id === 'serviceSearch') {
+                        loadServices(currentServiceFilter, e.target.value);
+                    }
+                } catch (error) {
+                    console.error('Search input error:', error);
+                }
+            });
 
-        function contactProfessional() {
-            alert('Calling professional... (This would open phone dialer in production)');
-        }
-
-        function viewProfile(profileId) {
-            const profile = professionalProfiles.find(p => p.id === profileId);
-            showModal(`
-                <div class="modal-header">
-                    <div class="modal-icon">${profile.avatar}</div>
-                    <h2 class="modal-title">${profile.name}</h2>
-                    <div class="profile-rating">
-                        <span class="stars">${'⭐'.repeat(Math.floor(profile.rating))}</span>
-                        <span>${profile.rating} (${profile.reviewCount} reviews)</span>
-                    </div>
-                </div>
-                <div class="modal-body">
-                    <div style="margin-bottom: 16px;">
-                        <p style="color: #6b7280; margin-bottom: 12px;">${profile.bio}</p>
-                        <div class="profile-details">
-                            <div class="profile-detail">📍 ${profile.location}</div>
-                            <div class="profile-detail">💼 ${profile.experience}</div>
-                            <div class="profile-detail">💰 $${profile.hourlyRate}/hr</div>
-                            <div class="profile-detail">🏢 ${profile.serviceTypes.join(', ')}</div>
-                        </div>
-                    </div>
-                    <div style="margin-bottom: 16px;">
-                        <strong>Specialties:</strong>
-                        <div class="profile-specialties" style="margin-top: 8px;">
-                            ${profile.specialties.map(spec => `<span class="specialty-tag">${spec}</span>`).join('')}
-                        </div>
-                    </div>
-                    <div style="border-top: 1px solid #e5e7eb; padding-top: 16px;">
-                        <strong>Recent Reviews:</strong>
-                        <div style="margin-top: 12px;">
-                            <div style="padding: 10px; background: #f9fafb; border-radius: 6px; margin-bottom: 8px;">
-                                <div style="color: #fbbf24; margin-bottom: 4px;">⭐⭐⭐⭐⭐</div>
-                                <p style="font-size: 0.85rem; color: #6b7280;">"Excellent work on our plumbing issue. Very professional!" - John D.</p>
+            // Profile management
+            function loadProfessionalProfiles() {
+                try {
+                    console.log('loadProfessionalProfiles called');
+                    const container = document.getElementById('professionalProfiles');
+                    if (!container) {
+                        console.error('professionalProfiles not found');
+                        return;
+                    }
+                    container.innerHTML = professionalProfiles.map(pro => `
+                        <div class="profile-card" onclick="viewProfile(${pro.id})" role="button" aria-label="View ${pro.name}'s profile">
+                            <div class="profile-header">
+                                <div class="profile-avatar">${pro.avatar}</div>
+                                <div class="profile-info">
+                                    <div class="profile-name">${pro.name}</div>
+                                    <div class="profile-rating">
+                                        <span class="stars">${'⭐'.repeat(Math.floor(pro.rating))}</span>
+                                        <span>${pro.rating} (${pro.reviewCount} reviews)</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div style="padding: 10px; background: #f9fafb; border-radius: 6px;">
-                                <div style="color: #fbbf24; margin-bottom: 4px;">⭐⭐⭐⭐⭐</div>
-                                <p style="font-size: 0.85rem; color: #6b7280;">"Quick response and fair pricing. Highly recommend!" - Sarah L.</p>
+                            <div class="profile-details">
+                                <div class="profile-detail">📍 ${pro.location}</div>
+                                <div class="profile-detail">💼 ${pro.experience}</div>
+                                <div class="profile-detail">💰 $${pro.hourlyRate}/hr</div>
+                                <div class="profile-detail">🏢 ${pro.serviceTypes.join(', ')}</div>
+                            </div>
+                            <div style="margin: 12px 0; font-size: 0.85rem; color: #6b7280;">${pro.bio}</div>
+                            <div class="profile-specialties">
+                                ${pro.specialties.map(spec => `<span class="specialty-tag">${spec}</span>`).join('')}
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="modal-actions">
-                    <button class="btn-modal btn-modal-primary" onclick="hireProfessional(${profileId})" aria-label="Hire ${profile.name}">Hire ${profile.name}</button>
-                    <button class="btn-modal btn-modal-secondary" onclick="closeModal(event)" aria-label="Close">Close</button>
-                </div>
-            `);
-        }
+                    `).join('');
+                } catch (error) {
+                    console.error('loadProfessionalProfiles error:', error);
+                }
+            }
 
-        function viewCustomerProfile(customerId) {
-            const customer = customerProfiles.find(c => c.id === customerId);
-            showModal(`
-                <div class="modal-header">
-                    <div class="modal-icon">${customer.avatar}</div>
-                    <h2 class="modal-title">${customer.name}</h2>
-                    <div class="profile-rating">
-                        <span class="stars">${'⭐'.repeat(Math.floor(customer.rating))}</span>
-                        <span>${customer.rating} (${customer.reviewCount} reviews)</span>
-                    </div>
-                </div>
-                <div class="modal-body">
-                    <div style="margin-bottom: 16px;">
-                        <p style="color: #6b7280; margin-bottom: 12px;">${customer.bio}</p>
-                        <div class="profile-details">
-                            <div class="profile-detail">📍 ${customer.location}</div>
-                            <div class="profile-detail">🕒 Member since ${customer.memberSince}</div>
-                        </div>
-                    </div>
-                    <div style="margin-bottom: 16px;">
-                        <strong>Project Types:</strong>
-                        <div class="profile-specialties" style="margin-top: 8px;">
-                            ${customer.projectTypes.map(type => `<span class="specialty-tag">${type}</span>`).join('')}
-                        </div>
-                    </div>
-                    <div style="border-top: 1px solid #e5e7eb; padding-top: 16px;">
-                        <strong>Recent Reviews from Professionals:</strong>
-                        <div style="margin-top: 12px;">
-                            <div style="padding: 10px; background: #f9fafb; border-radius: 6px; margin-bottom: 8px;">
-                                <div style="color: #fbbf24; margin-bottom: 4px;">⭐⭐⭐⭐⭐</div>
-                                <p style="font-size: 0.85rem; color: #6b7280;">"Great to work with, clear communication." - Pro A</p>
+            function loadCustomerProfiles() {
+                try {
+                    console.log('loadCustomerProfiles called');
+                    const container = document.getElementById('customerProfiles');
+                    if (!container) {
+                        console.error('customerProfiles not found');
+                        return;
+                    }
+                    container.innerHTML = customerProfiles.map(customer => `
+                        <div class="profile-card" onclick="viewCustomerProfile(${customer.id})" role="button" aria-label="View ${customer.name}'s profile">
+                            <div class="profile-header">
+                                <div class="profile-avatar">${customer.avatar}</div>
+                                <div class="profile-info">
+                                    <div class="profile-name">${customer.name}</div>
+                                    <div class="profile-rating">
+                                        <span class="stars">${'⭐'.repeat(Math.floor(customer.rating))}</span>
+                                        <span>${customer.rating} (${customer.reviewCount} reviews)</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div style="padding: 10px; background: #f9fafb; border-radius: 6px;">
-                                <div style="color: #fbbf24; margin-bottom: 4px;">⭐⭐⭐⭐</div>
-                                <p style="font-size: 0.85rem; color: #6b7280;">"Punctual payments and respectful." - Pro B</p>
+                            <div class="profile-details">
+                                <div class="profile-detail">📍 ${customer.location}</div>
+                                <div class="profile-detail">🕒 Member since ${customer.memberSince}</div>
+                            </div>
+                            <div style="margin: 12px 0; font-size: 0.85rem; color: #6b7280;">${customer.bio}</div>
+                            <div class="profile-specialties">
+                                ${customer.projectTypes.map(type => `<span class="specialty-tag">${type}</span>`).join('')}
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="modal-actions">
-                    <button class="btn-modal btn-modal-secondary" onclick="closeModal(event)" aria-label="Close">Close</button>
-                </div>
-            `);
-        }
-
-        function hireProfessional(profileId) {
-            const profile = professionalProfiles.find(p => p.id === profileId);
-            showModal(`
-                <div class="modal-header">
-                    <div class="modal-icon">📅</div>
-                    <h2 class="modal-title">Book ${profile.name}</h2>
-                    <p class="modal-subtitle">$${profile.hourlyRate}/hour</p>
-                </div>
-                <div class="modal-body">
-                    <form id="hiringForm" onsubmit="validateAndConfirmHiring(${profileId}); return false;">
-                        <div class="form-group">
-                            <label class="form-label" for="hireService">Service Needed</label>
-                            <select class="form-input" id="hireService" aria-required="true">
-                                ${profile.specialties.map(spec => `<option>${spec}</option>`).join('')}
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="hireCustomerName">Your Name</label>
-                            <input type="text" class="form-input" id="hireCustomerName" required aria-required="true">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="hireCustomerPhone">Phone Number</label>
-                            <input type="tel" class="form-input" id="hireCustomerPhone" required aria-required="true" pattern="[0-9]{10,}">
-                            <div class="error-message hidden" id="hirePhoneError">Please enter a valid phone number</div>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="hireServiceAddress">Service Address</label>
-                            <input type="text" class="form-input" id="hireServiceAddress" required aria-required="true">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="hireServiceDate">Preferred Date</label>
-                            <input type="date" class="form-input" id="hireServiceDate" required aria-required="true" min="${new Date().toISOString().split('T')[0]}">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="hireWorkDescription">Describe the work</label>
-                            <textarea class="form-input form-textarea" id="hireWorkDescription" required aria-required="true"></textarea>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-actions">
-                    <button class="btn-modal btn-modal-primary" onclick="validateAndConfirmHiring(${profileId})" aria-label="Confirm Booking">Confirm Booking</button>
-                    <button class="btn-modal btn-modal-secondary" onclick="closeModal(event)" aria-label="Cancel">Cancel</button>
-                </div>
-            `);
-        }
-
-        function validateAndConfirmHiring(profileId) {
-            const form = document.getElementById('hiringForm');
-            const phoneInput = document.getElementById('hireCustomerPhone');
-            const phoneError = document.getElementById('hirePhoneError');
-            
-            if (!form.checkValidity()) {
-                form.reportValidity();
-                return;
+                    `).join('');
+                } catch (error) {
+                    console.error('loadCustomerProfiles error:', error);
+                }
             }
-            
-            if (!/^[0-9]{10,}$/.test(phoneInput.value)) {
-                phoneError.classList.remove('hidden');
-                phoneInput.focus();
-                return;
-            } else {
-                phoneError.classList.add('hidden');
+
+            function switchTab(tab) {
+                try {
+                    console.log('switchTab called with:', tab);
+                    const professionalsTab = document.getElementById('professionalsTab');
+                    const customersTab = document.getElementById('customersTab');
+                    const professionalsTabButton = document.getElementById('professionalsTabButton');
+                    const customersTabButton = document.getElementById('customersTabButton');
+
+                    if (!professionalsTab || !customersTab || !professionalsTabButton || !customersTabButton) {
+                        console.error('Profile tab elements not found');
+                        return;
+                    }
+
+                    professionalsTab.classList.toggle('hidden', tab !== 'professionals');
+                    customersTab.classList.toggle('hidden', tab !== 'customers');
+                    professionalsTabButton.classList.toggle('active', tab === 'professionals');
+                    professionalsTabButton.setAttribute('aria-selected', tab === 'professionals');
+                    customersTabButton.classList.toggle('active', tab === 'customers');
+                    customersTabButton.setAttribute('aria-selected', tab === 'customers');
+
+                    if (tab === 'professionals') {
+                        loadProfessionalProfiles();
+                    } else {
+                        loadCustomerProfiles();
+                    }
+                } catch (error) {
+                    console.error('switchTab error:', error);
+                }
             }
-            
-            confirmHiring(profileId);
-        }
 
-        function confirmHiring(profileId) {
-            const profile = professionalProfiles.find(p => p.id === profileId);
-            const hiringInputs = document.querySelectorAll('#hiringForm input, #hiringForm select, #hiringForm textarea');
-            const hiringData = {
-                professional: profile.name,
-                professionalId: profileId,
-                service: hiringInputs[0].value,
-                customerName: hiringInputs[1].value,
-                phone: hiringInputs[2].value,
-                address: hiringInputs[3].value,
-                date: hiringInputs[4].value,
-                description: hiringInputs[5].value,
-                hourlyRate: profile.hourlyRate,
-                timestamp: Date.now()
-            };
+            // Booking functions
+            function bookService(serviceId) {
+                try {
+                    console.log('bookService called with:', serviceId);
+                    const service = services.find(s => s.id === serviceId);
+                    if (!service) {
+                        console.error('Service not found:', serviceId);
+                        return;
+                    }
+                    showModal(`
+                        <div class="modal-header">
+                            <div class="modal-icon">${service.icon}</div>
+                            <h2 class="modal-title">Book ${service.name}</h2>
+                            <p class="modal-subtitle">Starting at $${service.price}/hour</p>
+                        </div>
+                        <div class="modal-body">
+                            <form id="bookingForm" onsubmit="submitBooking(${serviceId}); return false;">
+                                <div class="form-group">
+                                    <label class="form-label" for="customerName">Your Name</label>
+                                    <input type="text" class="form-input" id="customerName" required aria-required="true">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="customerPhone">Phone Number</label>
+                                    <input type="tel" class="form-input" id="customerPhone" required aria-required="true" pattern="[0-9]{10,}">
+                                    <div class="error-message hidden" id="phoneError">Please enter a valid phone number</div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="serviceAddress">Service Address</label>
+                                    <input type="text" class="form-input" id="serviceAddress" required aria-required="true">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="serviceDate">Preferred Date</label>
+                                    <input type="date" class="form-input" id="serviceDate" required aria-required="true" min="${new Date().toISOString().split('T')[0]}">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="serviceTime">Preferred Time</label>
+                                    <select class="form-input" id="serviceTime" aria-required="true">
+                                        <option>Morning (8am-12pm)</option>
+                                        <option>Afternoon (12pm-5pm)</option>
+                                        <option>Evening (5pm-8pm)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="workDescription">Describe the work needed</label>
+                                    <textarea class="form-input form-textarea" id="workDescription" required aria-required="true"></textarea>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-actions">
+                            <button class="btn-modal btn-modal-primary" onclick="validateAndSubmitBooking(${serviceId})" aria-label="Book Service">Book Now</button>
+                            <button class="btn-modal btn-modal-secondary" onclick="closeModal(event)" aria-label="Cancel Booking">Cancel</button>
+                        </div>
+                    `);
+                } catch (error) {
+                    console.error('bookService error:', error);
+                }
+            }
 
-            const hirings = JSON.parse(localStorage.getItem('hirings') || '[]');
-            hirings.push(hiringData);
-            localStorage.setItem('hirings', JSON.stringify(hirings));
+            function validateAndSubmitBooking(serviceId) {
+                try {
+                    console.log('validateAndSubmitBooking called with:', serviceId);
+                    const form = document.getElementById('bookingForm');
+                    const phoneInput = document.getElementById('customerPhone');
+                    const phoneError = document.getElementById('phoneError');
 
-            const templateParams = {
-                from_name: hiringData.customerName,
-                to_name: 'HandyHawaii Bookings',
-                professional_name: profile.name,
-                service_type: hiringData.service,
-                customer_phone: hiringData.phone,
-                customer_address: hiringData.address,
-                service_date: hiringData.date,
-                work_description: hiringData.description,
-                hourly_rate: profile.hourlyRate,
-                message: `${hiringData.customerName} wants to hire ${profile.name} for ${hiringData.service}. Phone: ${hiringData.phone}, Address: ${hiringData.address}, Date: ${hiringData.date}. Rate: $${profile.hourlyRate}/hr. Description: ${hiringData.description}`
-            };
+                    if (!form || !phoneInput || !phoneError) {
+                        console.error('Booking form elements not found');
+                        return;
+                    }
 
-            showModal(`
-                <div class="modal-header">
-                    <div class="modal-icon">⏳</div>
-                    <h2 class="modal-title">Processing...</h2>
-                </div>
-                <div class="modal-body">
-                    <p>Sending your booking request for ${profile.name}...</p>
-                    <div id="notificationStatus"></div>
-                </div>
-            `);
+                    if (!form.checkValidity()) {
+                        form.reportValidity();
+                        return;
+                    }
 
-            emailjs.send('service_5s2cpvn', 'template_qikbrap', templateParams)
-                .then(response => {
+                    if (!/^[0-9]{10,}$/.test(phoneInput.value)) {
+                        phoneError.classList.remove('hidden');
+                        phoneInput.focus();
+                        return;
+                    } else {
+                        phoneError.classList.add('hidden');
+                    }
+
+                    submitBooking(serviceId);
+                } catch (error) {
+                    console.error('validateAndSubmitBooking error:', error);
+                }
+            }
+
+            function submitBooking(serviceId) {
+                try {
+                    console.log('submitBooking called with:', serviceId);
+                    const service = services.find(s => s.id === serviceId);
+                    if (!service) {
+                        console.error('Service not found:', serviceId);
+                        return;
+                    }
+                    const formData = {
+                        service: service.name,
+                        name: document.getElementById('customerName').value,
+                        phone: document.getElementById('customerPhone').value,
+                        address: document.getElementById('serviceAddress').value,
+                        date: document.getElementById('serviceDate').value,
+                        time: document.getElementById('serviceTime').value,
+                        description: document.getElementById('workDescription').value
+                    };
+
+                    const bookings = JSON.parse(localStorage.getItem('bookings') || '[]');
+                    const bookingId = Date.now();
+                    bookings.push({...formData, id: bookingId, status: 'pending'});
+                    localStorage.setItem('bookings', JSON.stringify(bookings));
+
+                    const shortMessage = `HandyHawaii: New ${formData.service} booking from ${formData.name}. ${formData.date} ${formData.time}. ID: ${bookingId}`;
+                    const templateParams = {
+                        name: formData.name,
+                        message: `NEW BOOKING RECEIVED:\n\n🔧 Service: ${formData.service}\n👤 Customer: ${formData.name}\n📞 Phone: ${formData.phone}\n📍 Address: ${formData.address}\n📅 Date: ${formData.date}\n⏰ Time: ${formData.time}\n📝 Description: ${formData.description}\n🆔 Booking ID: ${bookingId}\n\nContact customer ASAP to arrange service!`,
+                        email: 'alohafridays808@gmail.com',
+                        reply_to: formData.phone
+                    };
+
+                    showModal(`
+                        <div class="modal-header">
+                            <div class="modal-icon">⏳</div>
+                            <h2 class="modal-title">Processing Booking...</h2>
+                        </div>
+                        <div class="modal-body">
+                            <p>Sending your ${service.name} booking request...</p>
+                            <div id="notificationStatus"></div>
+                        </div>
+                    `);
+
+                    if (typeof emailjs !== 'undefined') {
+                        emailjs.send('service_5s2cpvn', 'template_qikbrap', templateParams)
+                            .then(response => {
+                                console.log('EmailJS success:', response);
+                                showBookingConfirmation(service, formData, bookingId, true, false);
+                            })
+                            .catch(error => {
+                                console.error('EmailJS error:', error);
+                                // Temporarily disabled SMS due to CORS issues
+                                showBookingConfirmation(service, formData, bookingId, false, false);
+                            });
+                    } else {
+                        console.warn('EmailJS not available; saving booking locally');
+                        showBookingConfirmation(service, formData, bookingId, false, false);
+                    }
+                } catch (error) {
+                    console.error('submitBooking error:', error);
+                    showBookingConfirmation(service, formData, bookingId, false, false);
+                }
+            }
+
+            function showBookingConfirmation(service, formData, bookingId, emailSuccess, smsSuccess) {
+                try {
+                    console.log('showBookingConfirmation called');
                     showModal(`
                         <div class="modal-header">
                             <div class="modal-icon">✅</div>
                             <h2 class="modal-title">Booking Confirmed!</h2>
                         </div>
                         <div class="modal-body">
-                            <div class="success-message">
-                                ${profile.name} has been booked for your ${hiringData.service} service!
+                            <div class="${emailSuccess || smsSuccess ? 'success-message' : 'error-message'}">
+                                ${emailSuccess ? '✅ Email sent to alohafridays808@gmail.com' : 
+                                smsSuccess ? '📱 SMS notification sent as backup' : 
+                                '⚠️ Saved locally. Configure notifications in settings.'}
                             </div>
-                            <p style="margin-top: 16px; text-align: center;">You'll receive a confirmation text shortly.</p>
+                            <div class="tracking-map">
+                                <div class="tracking-status">
+                                    <div class="status-dot"></div>
+                                    <span>Finding nearest available professional...</span>
+                                </div>
+                                <div class="eta-display">
+                                    <strong>Estimated arrival:</strong> ${formData.date} - ${formData.time}
+                                </div>
+                            </div>
+                            <p style="margin-top: 16px; font-size: 0.9rem; color: #6b7280;">
+                                You'll receive a confirmation text at ${formData.phone} with your professional's details.
+                            </p>
                         </div>
                         <div class="modal-actions">
-                            <button class="btn-modal btn-modal-primary" onclick="closeModal(event)" aria-label="Close">Done</button>
+                            <button class="btn-modal btn-modal-primary" onclick="trackBooking(${bookingId})" aria-label="Track Professional">Track Professional</button>
+                            <button class="btn-modal btn-modal-secondary" onclick="closeModal(event)" aria-label="Close">Done</button>
                         </div>
                     `);
-                })
-                .catch(error => {
-                    console.error('EmailJS error:', error);
+                } catch (error) {
+                    console.error('showBookingConfirmation error:', error);
+                }
+            }
+
+            function trackBooking(bookingId) {
+                try {
+                    console.log('trackBooking called with:', bookingId);
+                    const bookings = JSON.parse(localStorage.getItem('bookings') || '[]');
+                    const booking = bookings.find(b => b.id === bookingId);
+                    if (!booking) {
+                        console.error('Booking not found:', bookingId);
+                        return;
+                    }
                     showModal(`
                         <div class="modal-header">
-                            <div class="modal-icon">⚠️</div>
-                            <h2 class="modal-title">Booking Saved</h2>
+                            <div class="modal-icon">📍</div>
+                            <h2 class="modal-title">Live Tracking</h2>
                         </div>
                         <div class="modal-body">
-                            <div class="error-message">
-                                Email failed, but booking saved locally. Check notification settings.
+                            <div class="tracking-map" style="height: 200px; position: relative;">
+                                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                                    <div class="status-dot" style="width: 20px; height: 20px;"></div>
+                                </div>
+                                <div style="position: absolute; bottom: 10px; left: 10px; background: white; padding: 8px; border-radius: 4px; font-size: 0.8rem;">
+                                    Professional: Keoni M.
+                                </div>
                             </div>
-                            <p style="margin-top: 16px; text-align: center;">You'll receive a confirmation text shortly.</p>
+                            <div class="eta-display">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                    <span>Status:</span>
+                                    <strong style="color: #059669;">On the way</strong>
+                                </div>
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span>ETA:</span>
+                                    <strong>15 minutes</strong>
+                                </div>
+                            </div>
+                            <div style="margin-top: 16px; padding: 12px; background: #f3f4f6; border-radius: 6px;">
+                                <strong>Keoni Martinez</strong><br>
+                                <span style="color: #6b7280; font-size: 0.85rem;">⭐ 4.9 rating • 127 jobs completed</span>
+                            </div>
                         </div>
                         <div class="modal-actions">
-                            <button class="btn-modal btn-modal-primary" onclick="closeModal(event)" aria-label="Close">Done</button>
+                            <button class="btn-modal btn-modal-primary" onclick="contactProfessional()" aria-label="Call Professional">Call Professional</button>
+                            <button class="btn-modal btn-modal-secondary" onclick="closeModal(event)" aria-label="Close">Close</button>
                         </div>
                     `);
-                });
-        }
+                } catch (error) {
+                    console.error('trackBooking error:', error);
+                }
+            }
 
-        // Booking history
-        function loadBookingHistory() {
-            const container = document.getElementById('bookingHistory');
-            const bookings = JSON.parse(localStorage.getItem('bookings') || '[]');
-            container.innerHTML = bookings.length > 0 ? bookings.map(booking => `
-                <div style="background: #f9fafb; padding: 16px; border-radius: 8px; margin-bottom: 12px;">
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-                        <strong>${booking.service}</strong>
-                        <span style="color: ${booking.status === 'pending' ? '#f59e0b' : '#059669'};">${booking.status}</span>
-                    </div>
-                    <div style="font-size: 0.85rem; color: #6b7280;">
-                        <div>👤 ${booking.name}</div>
-                        <div>📅 ${booking.date} ${booking.time}</div>
-                        <div>📍 ${booking.address}</div>
-                        <div>📝 ${booking.description.substring(0, 100)}...</div>
-                    </div>
-                    <button class="btn btn-primary" onclick="trackBooking(${booking.id})" style="width: 100%; margin-top: 12px;" aria-label="Track ${booking.service} Booking">Track Booking</button>
-                </div>
-            `).join('') : '<div style="text-align: center; color: #6b7280; padding: 40px;">No bookings yet</div>';
-        }
+            function contactProfessional() {
+                try {
+                    console.log('contactProfessional called');
+                    alert('Calling professional... (This would open phone dialer in production)');
+                } catch (error) {
+                    console.error('contactProfessional error:', error);
+                }
+            }
 
-        // Admin dashboard
-        function showAdminDashboard() {
-            const bookings = JSON.parse(localStorage.getItem('bookings') || '[]');
-            const applications = JSON.parse(localStorage.getItem('applications') || '[]');
-            const hirings = JSON.parse(localStorage.getItem('hirings') || '[]');
-
-            showModal(`
-                <div class="modal-header">
-                    <div class="modal-icon">📊</div>
-                    <h2 class="modal-title">Admin Dashboard</h2>
-                    <p class="modal-subtitle">View all submissions (stored locally)</p>
-                </div>
-                <div class="modal-body" style="max-height: 400px; overflow-y: auto;">
-                    <div style="margin-bottom: 20px;">
-                        <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">Recent Bookings (${bookings.length})</h3>
-                        ${bookings.length > 0 ? bookings.slice(-3).map(b => `
-                            <div style="padding: 8px; background: #f9fafb; border-radius: 4px; margin-bottom: 6px; font-size: 0.85rem;">
-                                <strong>${b.service}</strong> - ${b.name}<br>
-                                📅 ${b.date} ${b.time}<br>
-                                📱 ${b.phone}
+            function viewProfile(profileId) {
+                try {
+                    console.log('viewProfile called with:', profileId);
+                    const profile = professionalProfiles.find(p => p.id === profileId);
+                    if (!profile) {
+                        console.error('Profile not found:', profileId);
+                        return;
+                    }
+                    showModal(`
+                        <div class="modal-header">
+                            <div class="modal-icon">${profile.avatar}</div>
+                            <h2 class="modal-title">${profile.name}</h2>
+                            <div class="profile-rating">
+                                <span class="stars">${'⭐'.repeat(Math.floor(profile.rating))}</span>
+                                <span>${profile.rating} (${profile.reviewCount} reviews)</span>
                             </div>
-                        `).join('') : '<p style="color: #6b7280; font-size: 0.85rem;">No bookings yet</p>'}
-                    </div>
-                    
-                    <div style="margin-bottom: 20px;">
-                        <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">Recent Applications (${applications.length})</h3>
-                        ${applications.length > 0 ? applications.slice(-3).map(a => `
-                            <div style="padding: 8px; background: #f9fafb; border-radius: 4px; margin-bottom: 6px; font-size: 0.85rem;">
-                                <strong>${a['Full Name'] || 'Applicant'}</strong><br>
-                                Skills: ${a['Primary Skill'] || 'N/A'}<br>
-                                Experience: ${a['Years of Experience'] || 'N/A'}
+                        </div>
+                        <div class="modal-body">
+                            <div style="margin-bottom: 16px;">
+                                <p style="color: #6b7280; margin-bottom: 12px;">${profile.bio}</p>
+                                <div class="profile-details">
+                                    <div class="profile-detail">📍 ${profile.location}</div>
+                                    <div class="profile-detail">💼 ${profile.experience}</div>
+                                    <div class="profile-detail">💰 $${profile.hourlyRate}/hr</div>
+                                    <div class="profile-detail">🏢 ${profile.serviceTypes.join(', ')}</div>
+                                </div>
                             </div>
-                        `).join('') : '<p style="color: #6b7280; font-size: 0.85rem;">No applications yet</p>'}
-                    </div>
+                            <div style="margin-bottom: 16px;">
+                                <strong>Specialties:</strong>
+                                <div class="profile-specialties" style="margin-top: 8px;">
+                                    ${profile.specialties.map(spec => `<span class="specialty-tag">${spec}</span>`).join('')}
+                                </div>
+                            </div>
+                            <div style="border-top: 1px solid #e5e7eb; padding-top: 16px;">
+                                <strong>Recent Reviews:</strong>
+                                <div style="margin-top: 12px;">
+                                    <div style="padding: 10px; background: #f9fafb; border-radius: 6px; margin-bottom: 8px;">
+                                        <div style="color: #fbbf24; margin-bottom: 4px;">⭐⭐⭐⭐⭐</div>
+                                        <p style="font-size: 0.85rem; color: #6b7280;">"Excellent work on our plumbing issue. Very professional!" - John D.</p>
+                                    </div>
+                                    <div style="padding: 10px; background: #f9fafb; border-radius: 6px;">
+                                        <div style="color: #fbbf24; margin-bottom: 4px;">⭐⭐⭐⭐⭐</div>
+                                        <p style="font-size: 0.85rem; color: #6b7280;">"Quick response and fair pricing. Highly recommend!" - Sarah L.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-actions">
+                            <button class="btn-modal btn-modal-primary" onclick="hireProfessional(${profileId})" aria-label="Hire ${profile.name}">Hire ${profile.name}</button>
+                            <button class="btn-modal btn-modal-secondary" onclick="closeModal(event)" aria-label="Close">Close</button>
+                        </div>
+                    `);
+                } catch (error) {
+                    console.error('viewProfile error:', error);
+                }
+            }
 
-                    <div>
-                        <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 10px;">Direct Hirings (${hirings.length})
+            function viewCustomerProfile(customerId) {
+                try {
+                    console.log('viewCustomerProfile called with:', customerId);
+                    const customer = customerProfiles.find(c => c.id === customerId);
+                    if (!customer) {
+                        console.error('Customer profile not found:', customerId);
+                        return;
+                    }
+                    showModal(`
+                        <div class="modal-header">
+                            <div class="modal-icon">${customer.avatar}</div>
+                            <h2 class="modal-title">${customer.name}</h2>
+                            <div class="profile-rating">
+                                <span class="stars">${'⭐'.repeat(Math.floor(customer.rating))}</span>
+                                <span>${customer.rating} (${customer.reviewCount} reviews)</span>
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <div style="margin-bottom: 16px;">
+                                <p style="color: #6b7280; margin-bottom: 12px;">${customer.bio}</p>
+                                <div class="profile-details">
+                                    <div class="profile-detail">📍 ${customer.location}</div>
+                                    <div class="profile-detail">🕒 Member since ${customer.memberSince}</div>
+                                </div>
+                            </div>
+                            <div style="margin-bottom: 16px;">
+                                <strong>Project Types:</strong>
+                                <div class="profile-specialties" style="margin-top: 8px;">
+                                    ${customer.projectTypes.map(type => `<span class="specialty-tag">${type}</span>`).join('')}
+                                </div>
+                            </div>
+                            <div style="border-top: 1px solid #e5e7eb; padding-top: 16px;">
+                                <strong>Recent Reviews from Professionals:</strong>
+                                <div style="margin-top: 12px;">
+                                    <div style="padding: 10px; background: #f9fafb; border-radius: 6px; margin-bottom: 8px;">
+                                        <div style="color: #fbbf24; margin-bottom: 4px;">⭐⭐⭐⭐⭐</div>
+                                        <p style="font-size: 0.85rem; color: #6b7280;">"Great to work with, clear communication." - Pro A</p>
+                                    </div>
+                                    <div style="padding: 10px; background: #f9fafb; border-radius: 6px;">
+                                        <div style="color: #fbbf24; margin-bottom: 4px;">⭐⭐⭐⭐</div>
+                                        <p style="font-size: 0.85rem; color: #6b7280;">"Punctual payments and respectful." - Pro B</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-actions">
+                            <button class="btn-modal btn-modal-secondary" onclick="closeModal(event)" aria-label="Close">Close</button>
+                        </div>
+                    `);
+                } catch (error) {
+                    console.error('viewCustomerProfile error:', error);
+                }
+            }
+
+            function hireProfessional(profileId) {
+                try {
+                    console.log('hireProfessional called with:', profileId);
+                    const profile = professionalProfiles.find(p => p.id === profileId);
+                    if (!profile) {
+                        console.error('Profile not found:', profileId);
+                        return;
+                    }
+                    showModal(`
+                        <div class="modal-header">
+                            <div class="modal-icon">📅</div>
+                            <h2 class="modal-title">Book ${profile.name}</h2>
+                            <p class="modal-subtitle">$${profile.hourlyRate}/hour</p>
+                        </div>
+                        <div class="modal-body">
+                            <form id="hiringForm" onsubmit="validateAndConfirmHiring(${profileId}); return false;">
+                                <div class="form-group">
+                                    <label class="form-label" for="hireService">Service Needed</label>
+                                    <select class="form-input" id="hireService" aria-required="true">
+                                        ${profile.specialties.map(spec => `<option>${spec}</option>`).join('')}
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="hireCustomerName">Your Name</label>
+                                    <input type="text" class="form-input" id="hireCustomerName" required aria-required="true">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="hireCustomerPhone">Phone Number</label>
+                                    <input type="tel" class="form-input" id="hireCustomerPhone" required aria-required="true" pattern="[0-9]{10,}">
+                                    <div class="error-message hidden" id="hirePhoneError">Please enter a valid phone number</div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="hireServiceAddress">Service Address</label>
+                                    <input type="text" class="form-input" id="hireServiceAddress" required aria-required="true">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="hireServiceDate">Preferred Date</label>
+                                    <input type="date" class="form-input" id="hireServiceDate" required aria-required="true" min="${new Date().toISOString().split('T')[0]}">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="hireWorkDescription">Describe the work</label>
+                                    <textarea class="form-input form-textarea" id="hireWorkDescription" required aria-required="true"></textarea>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-actions">
+                            <button class="btn-modal btn-modal-primary" onclick="validateAndConfirmHiring(${
